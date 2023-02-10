@@ -2,15 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6f1dafa-9daf-4ff0-a505-4a5ca49cba53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Dialogs/dialogItem/DialogItem.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Dialogs/dialogItem/DialogItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Dialogs/message/Message.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Dialogs/message/Message.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navBar/NavBar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/NavBar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navBar/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/MyPosts/Post/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/MyPosts/Post/Post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/Profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/Profile.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/Profile.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/it-incubator/homework",
+    "last_opened_file_path": "E:/it-incubator/samurai/src/components/profile/ProfileInfo",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
@@ -40,6 +57,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\it-incubator\samurai\src\components\profile\ProfileInfo" />
+      <recent name="E:\it-incubator\samurai\src\components\Dialogs\message" />
+      <recent name="E:\it-incubator\samurai\src\components\Dialogs\dialogItem" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -50,7 +74,7 @@
       <updated>1676043868662</updated>
       <workItem from="1676043870578" duration="387000" />
       <workItem from="1676044280698" duration="1636000" />
-      <workItem from="1676045959317" duration="1171000" />
+      <workItem from="1676045959317" duration="3740000" />
     </task>
     <servers />
   </component>

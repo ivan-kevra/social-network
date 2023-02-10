@@ -1,0 +1,10 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    background-color: #e44d3a;
+    color: white;
+    padding: 10px;
+}
+.messages {
+    padding: 10px;
+}

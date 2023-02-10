@@ -1,0 +1,7 @@
+.dialogsItems {
+    text-decoration: none;
+}
+
+.dialogsItems .active {
+    color: gold;
+}
