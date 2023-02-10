@@ -2,6 +2,7 @@ import style from "./Message.module.css";
 import React from "react";
 
 type MessagePropsType = {
+    id: number
     message: string
 }
 
