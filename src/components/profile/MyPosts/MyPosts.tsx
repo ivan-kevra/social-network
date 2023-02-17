@@ -5,6 +5,7 @@ import {PostType} from "../../../redux/state";
 
 type PostsPropsType = {
     posts: PostType[]
+    addPost: (title: string) => void
 }
 
 export const MyPosts: React.FC<PostsPropsType> = (props) => {
@@ -13,12 +14,13 @@ export const MyPosts: React.FC<PostsPropsType> = (props) => {
 
     let postsElements = props.posts.map((post) => {
         return (
-            <Post key={post.id} message={post.post} likesCount={post.likesCount}/>
+            <Post key={post.id} message={post.postMessage} likesCount={post.likesCount}/>
         )
     })
 
     const addPostHandler = () => {
-        console.log(title)
+        props.addPost(title)
+        setTitle('')
     }
     const onChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
         setTitle(event.currentTarget.value)

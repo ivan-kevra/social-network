@@ -1,6 +1,9 @@
+import {rerenderEntireTree} from "../render";
+
+
 export type PostType = {
     id: number
-    post: string
+    postMessage: string
     likesCount: number
 }
 export type DialogType = {
@@ -39,9 +42,9 @@ const avatar = 'https://www.shutterstock.com/shutterstock/photos/1606423033/disp
 export const state: StateType = {
     profilePage: {
         posts: [
-            {id: 1, post: 'post 1', likesCount: 10},
-            {id: 2, post: 'post 2', likesCount: 15},
-            {id: 3, post: 'post 3', likesCount: 20},
+            {id: 1, postMessage: 'post 1', likesCount: 10},
+            {id: 2, postMessage: 'post 2', likesCount: 15},
+            {id: 3, postMessage: 'post 3', likesCount: 20},
         ],
     },
     dialogsPage: {
@@ -69,4 +72,8 @@ export const state: StateType = {
     },
 }
 
-
+export const addPost = (postMessage: string) => {
+    let newPost = {id: 5, postMessage, likesCount: 50}
+    state.profilePage.posts.push(newPost)
+    rerenderEntireTree(state)
+}
