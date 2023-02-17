@@ -1,13 +1,14 @@
 import React from 'react';
 import style from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
+import {AppPropsType} from "../../../App";
+import {PostType} from "../../../index";
 
-export const MyPosts = () => {
-    const posts = [
-        {id: 1, post: 'post 1', likesCount: 10},
-        {id: 2, post: 'post 2', likesCount: 15},
-        {id: 3, post: 'post 3', likesCount: 20},
-    ]
+type PostsPropsType = {
+    posts: PostType[]
+}
+
+export const MyPosts: React.FC<PostsPropsType> = (props) => {
     return (
         <div>
             My posts
@@ -19,7 +20,7 @@ export const MyPosts = () => {
                 New Post
             </div>
             <div className={style.posts}>
-                {posts.map((post) => {
+                {props.posts.map((post) => {
                     return (
                         <Post message={post.post} likesCount={post.likesCount}/>
                     )
