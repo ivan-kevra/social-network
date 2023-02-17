@@ -1,0 +1,18 @@
+.message {
+    background-color: #e3d54c;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.message2 {
+    display: flex;
+    background-color: #ece7d2;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.userId {
+    background-color: white;
+}

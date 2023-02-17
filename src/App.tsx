@@ -16,18 +16,18 @@ export const App: React.FC<AppPropsType> = (props) => {
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
-                <NavBar/>
+                <NavBar navbar={props.state.navbar}/>
                 <div className='app-wrapper-content'>
                     <Routes>
                         <Route path="/profile/*" element={<Profile profileState={props.state.profilePage}/>}/>
                         <Route path="/dialogs/*" element={<Dialogs dialogsState={props.state.dialogsPage}/>}/>
                     </Routes>
                 </div>
+
             </div>
         </BrowserRouter>
     );
 }
-
 
 
 
