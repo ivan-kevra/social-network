@@ -21,7 +21,6 @@ export type FriendType = {
 }
 export type ProfilePageType = {
     posts: PostType[]
-
 }
 export type DialogsPageType = {
     messages: MessageType[]
@@ -67,6 +66,7 @@ export const state: StateType = {
             {id: 2, name: 'Sasha', avatar},
             {id: 3, name: 'Igor', avatar},
         ]
-    }
+    },
 }
+
 
