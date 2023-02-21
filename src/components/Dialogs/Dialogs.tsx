@@ -6,6 +6,10 @@ import {DialogsPageType} from "../../redux/state";
 
 type dialogsStatePropsType = {
     dialogsState: DialogsPageType
+    addMessage: () => void
+    updateNewMessageText: (newMessageText: string) => void
+    newMessageText: string
+
 }
 
 export const Dialogs: React.FC<dialogsStatePropsType> = (props) => {
@@ -23,19 +27,18 @@ export const Dialogs: React.FC<dialogsStatePropsType> = (props) => {
                      avatar={message.avatar}/>
         )
     })
-    let [message, setMessage] = useState('')
     const addMessageHandler = () => {
-        console.log(message)
+        props.addMessage()
     }
     const onChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
-        setMessage(event.currentTarget.value)
+        props.updateNewMessageText(event.currentTarget.value)
     }
     return (
         <div className={style.dialogs}>
             <div className={style.dialogsItems}>{dialogs}</div>
             <div className={style.messages}>{messages}</div>
             <div>
-                <textarea value={message} onChange={onChangeHandler}></textarea>
+                <textarea value={props.newMessageText} onChange={onChangeHandler}></textarea>
                 <button onClick={addMessageHandler}>add Message</button>
             </div>
 

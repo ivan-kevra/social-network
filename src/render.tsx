@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import {App} from './App';
 import reportWebVitals from './reportWebVitals';
-import {addPost, StateType} from "./redux/state";
+import {addMessage, addPost, StateType, updateNewMessageText, updateNewPostText} from "./redux/state";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -12,7 +12,12 @@ const root = ReactDOM.createRoot(
 export let rerenderEntireTree = (state: StateType) => {
     root.render(
         <React.StrictMode>
-            <App state={state} addPost={addPost}/>
+            <App state={state} addPost={addPost}
+                 updateNewPostText={updateNewPostText}
+                 newPostText={state.profilePage.newPostText}
+                 addMessage={addMessage}
+                 updateNewMessageText={updateNewMessageText}
+                 newMessageText={state.dialogsPage.newMessageText}/>
         </React.StrictMode>
     );
 }

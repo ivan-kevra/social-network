@@ -1,16 +1,17 @@
 import React, {ChangeEvent, useState} from 'react';
 import style from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
-import {PostType} from "../../../redux/state";
+import {PostType, updateNewPostText} from "../../../redux/state";
 
 type PostsPropsType = {
     posts: PostType[]
-    addPost: (title: string) => void
+    addPost: () => void
+    newPostText: string
+    updateNewPostText: (newPostText: string) => void
 }
 
 export const MyPosts: React.FC<PostsPropsType> = (props) => {
 
-    let [title, setTitle] = useState('')
 
     let postsElements = props.posts.map((post) => {
         return (
@@ -19,18 +20,17 @@ export const MyPosts: React.FC<PostsPropsType> = (props) => {
     })
 
     const addPostHandler = () => {
-        props.addPost(title)
-        setTitle('')
+        props.addPost()
     }
     const onChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
-        setTitle(event.currentTarget.value)
+        props.updateNewPostText(event.currentTarget.value)
     }
 
     return (
         <div>
             My posts
             <div>
-                <textarea onChange={onChangeHandler} value={title}/>
+                <textarea onChange={onChangeHandler} value={props.newPostText}/>
                 <button onClick={addPostHandler}>Add post</button>
             </div>
             <div>

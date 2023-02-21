@@ -24,10 +24,12 @@ export type FriendType = {
 }
 export type ProfilePageType = {
     posts: PostType[]
+    newPostText: string
 }
 export type DialogsPageType = {
     messages: MessageType[]
     dialogs: DialogType[]
+    newMessageText: string
 }
 export type NavbarType = {
     friends: FriendType[]
@@ -46,6 +48,7 @@ export const state: StateType = {
             {id: 2, postMessage: 'post 2', likesCount: 15},
             {id: 3, postMessage: 'post 3', likesCount: 20},
         ],
+        newPostText: ''
     },
     dialogsPage: {
         messages: [
@@ -54,6 +57,7 @@ export const state: StateType = {
             {id: 3, message: 'Bye from 1st user', userId: 1, avatar},
             {id: 4, message: 'Bye from 2nd user', userId: 2, avatar},
         ],
+        newMessageText: '',
         dialogs: [
             {id: 1, name: 'Dimych', avatar},
             {id: 2, name: 'Andrey', avatar},
@@ -72,8 +76,23 @@ export const state: StateType = {
     },
 }
 
-export const addPost = (postMessage: string) => {
-    let newPost = {id: 5, postMessage, likesCount: 50}
+export const addPost = () => {
+    let newPost = {id: 5, postMessage: state.profilePage.newPostText, likesCount: 50}
     state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText = ''
+    rerenderEntireTree(state)
+}
+export const updateNewPostText = (newPostText: string) => {
+    state.profilePage.newPostText = newPostText
+    rerenderEntireTree(state)
+}
+export const addMessage = () => {
+    let newMessage = {id: 5, message: state.dialogsPage.newMessageText, userId: 1, avatar: avatar}
+    state.dialogsPage.messages.push(newMessage)
+    state.dialogsPage.newMessageText = ''
+    rerenderEntireTree(state)
+}
+export const updateNewMessageText = (newMessageText: string) => {
+    state.dialogsPage.newMessageText = newMessageText
     rerenderEntireTree(state)
 }
