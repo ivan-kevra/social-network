@@ -9,9 +9,8 @@ import {StateType, store} from "./redux/state";
 
 type AppPropsType = {
     state: StateType
-    addPost: () => void
+    dispatch: any
     newPostText: string
-    updateNewPostText: (newPostText: string) => void
     addMessage: () => void
     updateNewMessageText: (newMessageText: string) => void
     newMessageText: string
@@ -26,8 +25,7 @@ export const App: React.FC<AppPropsType> = (props) => {
                 <div className='app-wrapper-content'>
                     <Routes>
                         <Route path="profile/*" element={<Profile profileState={props.state.profilePage}
-                                                                  addPost={props.addPost}
-                                                                  updateNewPostText={props.updateNewPostText}
+                                                                  dispatch={props.dispatch}
                                                                   newPostText={props.newPostText}
                         />}/>
                         <Route path="dialogs/*" element={<Dialogs
