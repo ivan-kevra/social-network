@@ -30,7 +30,7 @@ export const MyPosts: React.FC<PostsPropsType> = (props) => {
         <div>
             My posts
             <div>
-                <textarea onChange={onChangeHandler} value={title}></textarea>
+                <textarea onChange={onChangeHandler} value={title}/>
                 <button onClick={addPostHandler}>Add post</button>
             </div>
             <div>
