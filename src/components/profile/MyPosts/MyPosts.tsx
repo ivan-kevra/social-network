@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useState} from 'react';
 import style from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
-import {PostType, updateNewPostText} from "../../../redux/state";
+import {PostType} from "../../../redux/state";
 
 type PostsPropsType = {
     posts: PostType[]
@@ -11,7 +11,6 @@ type PostsPropsType = {
 }
 
 export const MyPosts: React.FC<PostsPropsType> = (props) => {
-
 
     let postsElements = props.posts.map((post) => {
         return (
