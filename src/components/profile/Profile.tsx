@@ -5,10 +5,10 @@ import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
 import {ActionType, ProfilePageType} from "../../redux/store";
 
 
-type ProfilePropsType = {
-    profileState: ProfilePageType
+type ProfilePropsType = {profileState: ProfilePageType
     dispatch: (action: ActionType) => void
     newPostText: string
+
 }
 
 export const Profile: React.FC<ProfilePropsType> = (props) => {

@@ -5,30 +5,31 @@ import {NavBar} from "./components/navBar/NavBar";
 import {Profile} from "./components/profile/Profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {ActionType, StateType, StoreType} from "./redux/store";
+import {EmptyObject, Store} from "redux";
+import {ActionType, DialogsPageType, ProfilePageType, SidebarType, StateType} from "./redux/store";
+
 
 type AppPropsType = {
-    state: StateType
-    dispatch: (action: ActionType) => void
-    store: any
+    store: Store<EmptyObject & { profilePage: ProfilePageType; dialogsPage: DialogsPageType; sidebar: SidebarType }, ActionType>
 }
 
 export const App: React.FC<AppPropsType> = (props) => {
+    const state: StateType = props.store.getState()
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
-                <NavBar navbar={props.state.sidebar}/>
+                <NavBar navbar={state.sidebar}/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path="profile/*" element={<Profile profileState={props.state.profilePage}
-                                                                  dispatch={props.dispatch}
-                                                                  newPostText={props.store._state.profilePage.newPostText}
+                        <Route path="profile/*" element={<Profile profileState={state.profilePage}
+                                                                  dispatch={props.store.dispatch.bind(props.store)}
+                                                                  newPostText={state.profilePage.newPostText}
                         />}/>
                         <Route path="dialogs/*" element={<Dialogs
-                            dialogsState={props.state.dialogsPage}
-                            dispatch={props.dispatch}
-                            newMessageText={props.store._state.dialogsPage.newMessageText}/>}/>
+                            dialogsState={state.dialogsPage}
+                            dispatch={props.store.dispatch.bind(props.store)}
+                            newMessageText={state.dialogsPage.newMessageText}/>}/>
                     </Routes>
                 </div>
 

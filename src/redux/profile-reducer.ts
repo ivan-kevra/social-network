@@ -1,5 +1,6 @@
 import {ActionType, ProfilePageType} from "./store";
 
+
 let initialState = {
     posts: [
         {id: 1, postMessage: 'post 1', likesCount: 10},
