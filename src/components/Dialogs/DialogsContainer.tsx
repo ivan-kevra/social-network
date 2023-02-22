@@ -3,24 +3,30 @@ import {addMessageAC, updateNewMessageTextAC} from "../../redux/dialogs-reducer"
 import {Dialogs} from "./Dialogs";
 import {ActionType, DialogsPageType, ProfilePageType} from "../../redux/store";
 import {EmptyObject, Store} from "redux";
+import {StoreContext} from '../../StoreContext';
 
 type DialogsContainerStatePropsType = {
-    store: Store<EmptyObject & { profilePage: ProfilePageType; dialogsPage: DialogsPageType; }, ActionType>
+    // store: Store<EmptyObject & { profilePage: ProfilePageType; dialogsPage: DialogsPageType; }, ActionType>
 }
 
 export const DialogsContainer: React.FC<DialogsContainerStatePropsType> = (props) => {
 
-    let state = props.store.getState().dialogsPage
 
-    const addMessageHandler = () => {
-        props.store.dispatch(addMessageAC())
-    }
-    const onChangeHandler = (newMessageText: string) => {
-        props.store.dispatch(updateNewMessageTextAC(newMessageText))
-    }
+    return <StoreContext.Consumer>
+        {(store: any) => {
+            let state = store.getState().dialogsPage
 
-    return <Dialogs addMessage={addMessageHandler}
-                    updateNewMessageText={onChangeHandler}
-                    dialogsPage={state}/>
+            const addMessageHandler = () => {
+                store.dispatch(addMessageAC())
+            }
+            const onChangeHandler = (newMessageText: string) => {
+                store.dispatch(updateNewMessageTextAC(newMessageText))
+            }
+            return <Dialogs addMessage={addMessageHandler}
+                            updateNewMessageText={onChangeHandler}
+                            dialogsPage={state}/>
+        }
+        }
+    </StoreContext.Consumer>
 };
 

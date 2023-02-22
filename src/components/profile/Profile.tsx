@@ -7,14 +7,14 @@ import {EmptyObject, Store} from "redux";
 
 
 type ProfilePropsType = {
-    store: Store<EmptyObject & { profilePage: ProfilePageType; dialogsPage: DialogsPageType; }, ActionType>
+    // store: Store<EmptyObject & { profilePage: ProfilePageType; dialogsPage: DialogsPageType; }, ActionType>
 }
 
 export const Profile: React.FC<ProfilePropsType> = (props) => {
     return (
         <div className={style.content}>
             <ProfileInfo/>
-            <MyPostsContainer store={props.store}/>
+            <MyPostsContainer/>
         </div>
     )
 }
