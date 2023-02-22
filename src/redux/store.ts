@@ -49,7 +49,6 @@ export type StoreType = {
 }
 export const avatar = 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
 
-
 export type ActionType = ReturnType<typeof addPostAC>
     | ReturnType<typeof updateNewPostTextAC>
     | ReturnType<typeof addMessageAC>
@@ -101,11 +100,9 @@ export let store: StoreType = {
         this._callSubscriber = callback
     },
     dispatch(action: ActionType) {
-
         this._state.profilePage = profileReducer(this._state.profilePage, action)
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
         this._state.sidebar = sidebarReducer(this._state.sidebar, action)
-
         this._callSubscriber(this._state)
     }
 }
