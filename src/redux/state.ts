@@ -1,3 +1,7 @@
+import {addPostAC, profileReducer, updateNewPostTextAC} from "./profile-reducer";
+import {addMessageAC, dialogsReducer, updateNewMessageTextAC} from "./dialogs-reducer";
+import {sidebarReducer} from "./sidebar-reducer";
+
 export type PostType = {
     id: number
     postMessage: string
@@ -28,18 +32,31 @@ export type DialogsPageType = {
     dialogs: DialogType[]
     newMessageText: string
 }
-export type NavbarType = {
+export type SidebarType = {
     friends: FriendType[]
 }
 export type StateType = {
     profilePage: ProfilePageType
     dialogsPage: DialogsPageType
-    navbar: NavbarType
+    sidebar: SidebarType
 }
-const avatar = 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+export type StoreType = {
+    _state: StateType
+    _callSubscriber: (_state: StateType) => void
+    getState: () => StateType
+    subscribe: (callback: () => void) => void
+    dispatch: (action: ActionType) => void
+}
+export const avatar = 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
 
 
-export let store = {
+export type ActionType = ReturnType<typeof addPostAC>
+    | ReturnType<typeof updateNewPostTextAC>
+    | ReturnType<typeof addMessageAC>
+    | ReturnType<typeof updateNewMessageTextAC>
+
+
+export let store: StoreType = {
     _state: {
         profilePage: {
             posts: [
@@ -66,7 +83,7 @@ export let store = {
                 {id: 6, name: 'Valera', avatar},
             ],
         },
-        navbar: {
+        sidebar: {
             friends: [
                 {id: 1, name: 'Andrew', avatar},
                 {id: 2, name: 'Sasha', avatar},
@@ -80,31 +97,18 @@ export let store = {
     getState() {
         return this._state
     },
-    subscribe(observer: any) {
-        this._callSubscriber = observer
+    subscribe(callback) {
+        this._callSubscriber = callback
     },
+    dispatch(action: ActionType) {
 
-    addMessage() {
-        let newMessage = {id: 5, message: this._state.dialogsPage.newMessageText, userId: 1, avatar: avatar}
-        this._state.dialogsPage.messages.push(newMessage)
-        this._state.dialogsPage.newMessageText = ''
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action)
+
         this._callSubscriber(this._state)
-    },
-    updateNewMessageText(newMessageText: string) {
-        this._state.dialogsPage.newMessageText = newMessageText
-        this._callSubscriber(this._state)
-    },
-    dispatch(action: any) {
-        if (action.type === 'ADD-POST') {
-            let newPost = {id: 5, postMessage: this._state.profilePage.newPostText, likesCount: 50}
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostText = ''
-            this._callSubscriber(this._state)
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newPostText
-            this._callSubscriber(this._state)
-        }
     }
 }
+
 
 

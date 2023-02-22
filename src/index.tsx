@@ -3,28 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import {App} from './App';
 import reportWebVitals from './reportWebVitals';
-import {StateType, store} from "./redux/state";
+import {store} from "./redux/state";
 
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 
-let rerenderEntireTree = (state: StateType) => {
+let rerenderEntireTree = () => {
     root.render(
         <React.StrictMode>
             <App state={store.getState()}
                  dispatch={store.dispatch.bind(store)}
                  newPostText={store.getState().profilePage.newPostText}
-                 addMessage={store.addMessage.bind(store)}
-                 updateNewMessageText={store.updateNewMessageText.bind(store)}
                  newMessageText={store.getState().dialogsPage.newMessageText}
             />
         </React.StrictMode>
     );
 }
 
-rerenderEntireTree(store.getState())
+rerenderEntireTree()
 
 store.subscribe(rerenderEntireTree);
 

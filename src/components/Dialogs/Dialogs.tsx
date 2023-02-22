@@ -1,13 +1,13 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent} from 'react';
 import style from './Dialogs.module.css'
 import {DialogItem} from "./dialogItem/DialogItem";
 import {Message} from "./message/Message";
 import {DialogsPageType} from "../../redux/state";
+import {addMessageAC, updateNewMessageTextAC} from "../../redux/dialogs-reducer";
 
 type dialogsStatePropsType = {
     dialogsState: DialogsPageType
-    addMessage: () => void
-    updateNewMessageText: (newMessageText: string) => void
+    dispatch: any
     newMessageText: string
 
 }
@@ -28,17 +28,17 @@ export const Dialogs: React.FC<dialogsStatePropsType> = (props) => {
         )
     })
     const addMessageHandler = () => {
-        props.addMessage()
+        props.dispatch(addMessageAC())
     }
     const onChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
-        props.updateNewMessageText(event.currentTarget.value)
+        props.dispatch(updateNewMessageTextAC(event.currentTarget.value))
     }
     return (
         <div className={style.dialogs}>
             <div className={style.dialogsItems}>{dialogs}</div>
             <div className={style.messages}>{messages}</div>
             <div>
-                <textarea value={props.newMessageText} onChange={onChangeHandler}></textarea>
+                <textarea placeholder={'Enter your message'} value={props.newMessageText} onChange={onChangeHandler}></textarea>
                 <button onClick={addMessageHandler}>add Message</button>
             </div>
 

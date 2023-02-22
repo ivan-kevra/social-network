@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6f1dafa-9daf-4ff0-a505-4a5ca49cba53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/sidebar-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navBar/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/NavBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/MyPosts/MyPosts.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/Profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
@@ -18,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -43,7 +48,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/it-incubator/samurai",
+    "last_opened_file_path": "E:/it-incubator/samurai/src/redux",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
@@ -53,11 +58,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\it-incubator\samurai\src\redux" />
       <recent name="E:\it-incubator\samurai\src" />
       <recent name="E:\it-incubator\samurai\src\components\sidebar" />
       <recent name="E:\it-incubator\samurai\src\components\profile\ProfileInfo" />
       <recent name="E:\it-incubator\samurai\src\components\Dialogs\message" />
-      <recent name="E:\it-incubator\samurai\src\components\Dialogs\dialogItem" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\it-incubator\samurai\src\components\navBar" />
@@ -77,7 +82,7 @@
       <workItem from="1676357894899" duration="32000" />
       <workItem from="1676617920802" duration="18773000" />
       <workItem from="1676963790749" duration="22000" />
-      <workItem from="1676972492274" duration="11406000" />
+      <workItem from="1676972492274" duration="21584000" />
     </task>
     <servers />
   </component>
