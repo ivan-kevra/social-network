@@ -64,19 +64,23 @@ let initialState = {
 
 export const dialogsReducer = (state: DialogsPageType = initialState, action: ActionType) => {
     switch (action.type) {
-        case 'ADD-MESSAGE':
+        case 'ADD-MESSAGE': {
             let newMessage = {
                 id: 5,
                 message: state.newMessageText,
                 userId: 1,
                 avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
             }
-            state.messages.push(newMessage)
-            state.newMessageText = ''
-            return state
+            let stateCopy = {...state}
+            stateCopy.messages = [...state.messages]
+            stateCopy.messages.push(newMessage)
+            stateCopy.newMessageText = ''
+            return stateCopy
+        }
         case 'UPDATE-NEW-MESSAGE-TEXT':
-            state.newMessageText = action.newMessageText
-            return state
+            let stateCopy = {...state}
+            stateCopy.newMessageText = action.newMessageText
+            return stateCopy
         default:
             return state
     }
