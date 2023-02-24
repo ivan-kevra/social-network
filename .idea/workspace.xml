@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6f1dafa-9daf-4ff0-a505-4a5ca49cba53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/users/Users.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/users/Users.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/users/UsersContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navBar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -34,27 +40,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/it-incubator/samurai/src/components/Dialogs&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;E:\\it-incubator\\samurai\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/it-incubator/samurai/src/components/users",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "E:\\it-incubator\\samurai\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\it-incubator\samurai\src\components\users" />
+      <recent name="E:\it-incubator\samurai\src\redux" />
       <recent name="E:\it-incubator\samurai\src\components\Dialogs" />
       <recent name="E:\it-incubator\samurai\src\components\profile\MyPosts" />
-      <recent name="E:\it-incubator\samurai\src\redux" />
       <recent name="E:\it-incubator\samurai\src" />
-      <recent name="E:\it-incubator\samurai\src\components\sidebar" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\it-incubator\samurai\src\components\navBar" />
@@ -75,7 +81,7 @@
       <workItem from="1676617920802" duration="18773000" />
       <workItem from="1676963790749" duration="22000" />
       <workItem from="1676972492274" duration="40406000" />
-      <workItem from="1677228988466" duration="5296000" />
+      <workItem from="1677228988466" duration="14859000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,7 @@
 import {addPostAC, profileReducer, updateNewPostTextAC} from "./profile-reducer";
 import {addMessageAC, dialogsReducer, updateNewMessageTextAC} from "./dialogs-reducer";
 import {sidebarReducer} from "./sidebar-reducer";
+import {followAC, setUsersAC, unfollowAC} from "./users-reducer";
 
 
 export type PostType = {
@@ -36,9 +37,25 @@ export type DialogsPageType = {
 export type SidebarType = {
     friends: FriendType[]
 }
+export type locationType = {
+    city: string
+    country: string
+}
+export type UserType = {
+    id: number
+    followed: boolean
+    fullName: string
+    avatar: string
+    status: string
+    location: locationType
+}
+export type UsersPageType = {
+    users: UserType[]
+}
 export type StateType = {
     profilePage: ProfilePageType
     dialogsPage: DialogsPageType
+    usersPage: UsersPageType
     sidebar: SidebarType
 }
 export type StoreType = {
@@ -53,6 +70,9 @@ export type ActionType = ReturnType<typeof addPostAC>
     | ReturnType<typeof updateNewPostTextAC>
     | ReturnType<typeof addMessageAC>
     | ReturnType<typeof updateNewMessageTextAC>
+    | ReturnType<typeof followAC>
+    | ReturnType<typeof unfollowAC>
+    | ReturnType<typeof setUsersAC>
 
 
 export let store: StoreType = {
@@ -145,6 +165,34 @@ export let store: StoreType = {
                 },
             ]
         },
+        usersPage: {
+            users: [
+                {
+                    id: 1,
+                    followed: true,
+                    fullName: 'User 1',
+                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg',
+                    status: 'Hello',
+                    location: {city: 'Minsk', country: 'Belarus'}
+                },
+                {
+                    id: 2,
+                    followed: false,
+                    fullName: 'User 2',
+                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg',
+                    status: 'Hello 2',
+                    location: {city: 'Moscow', country: 'Russia'}
+                },
+                {
+                    id: 3,
+                    followed: false,
+                    fullName: 'User 3',
+                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg',
+                    status: 'Hello 3',
+                    location: {city: 'Kiev', country: 'Ukraine'}
+                },
+            ]
+        }
     },
     _callSubscriber(_state: StateType) {
         console.log('state was changed')

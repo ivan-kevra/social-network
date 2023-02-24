@@ -1,0 +1,15 @@
+.users {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    background-color: #4ff6c3;
+    color: black;
+    padding: 10px;
+}
+
+.span {
+    color: black;
+}
+
+/*.messages {*/
+/*    padding: 10px;*/
+/*}*/

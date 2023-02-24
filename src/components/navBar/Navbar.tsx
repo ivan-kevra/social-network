@@ -34,6 +34,10 @@ export const Navbar: React.FC<NavBarPropsType> = (props) => {
                 <NavLink to={'/settings'}
                          className={({isActive}) => isActive ? style.active : undefined}>Settings</NavLink>
             </div>
+            <div className={style.item}>
+                <NavLink to={'/users'}
+                         className={({isActive}) => isActive ? style.active : undefined}>Users</NavLink>
+            </div>
             <div>
                 <Sidebar friends={store.getState().sidebar.friends}/>
             </div>
