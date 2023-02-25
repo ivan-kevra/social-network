@@ -2,6 +2,7 @@ import {addPostAC, profileReducer, updateNewPostTextAC} from "./profile-reducer"
 import {addMessageAC, dialogsReducer, updateNewMessageTextAC} from "./dialogs-reducer";
 import {sidebarReducer} from "./sidebar-reducer";
 import {followAC, setUsersAC, unfollowAC} from "./users-reducer";
+import avatar from '../assets/images/avatar.jpg'
 
 
 export type PostType = {
@@ -44,8 +45,8 @@ export type locationType = {
 export type UserType = {
     id: number
     followed: boolean
-    fullName: string
-    avatar: string
+    name: string
+    photos: string
     status: string
     location: locationType
 }
@@ -91,25 +92,25 @@ export let store: StoreType = {
                     id: 1,
                     message: 'Hi, I am 1st user',
                     userId: 1,
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
                 {
                     id: 2,
                     message: 'Hi, I am 2nd user',
                     userId: 2,
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
                 {
                     id: 3,
                     message: 'Bye from 1st user',
                     userId: 1,
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
                 {
                     id: 4,
                     message: 'Bye from 2nd user',
                     userId: 2,
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
             ],
             newMessageText: '',
@@ -117,32 +118,32 @@ export let store: StoreType = {
                 {
                     id: 1,
                     name: 'Dimych',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
                 {
                     id: 2,
                     name: 'Andrey',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
                 {
                     id: 3,
                     name: 'Sveta',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
                 {
                     id: 4,
                     name: 'Sasha',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
                 {
                     id: 5,
                     name: 'Victor',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
                 {
                     id: 6,
                     name: 'Valera',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
             ],
         },
@@ -151,17 +152,17 @@ export let store: StoreType = {
                 {
                     id: 1,
                     name: 'Andrew',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
                 {
                     id: 2,
                     name: 'Sasha',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
                 {
                     id: 3,
                     name: 'Igor',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
+                    avatar: avatar
                 },
             ]
         },
@@ -170,24 +171,24 @@ export let store: StoreType = {
                 {
                     id: 1,
                     followed: true,
-                    fullName: 'User 1',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg',
+                    name: 'User 1',
+                    photos: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg',
                     status: 'Hello',
                     location: {city: 'Minsk', country: 'Belarus'}
                 },
                 {
                     id: 2,
                     followed: false,
-                    fullName: 'User 2',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg',
+                    name: 'User 2',
+                    photos: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg',
                     status: 'Hello 2',
                     location: {city: 'Moscow', country: 'Russia'}
                 },
                 {
                     id: 3,
                     followed: false,
-                    fullName: 'User 3',
-                    avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg',
+                    name: 'User 3',
+                    photos: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg',
                     status: 'Hello 3',
                     location: {city: 'Kiev', country: 'Ukraine'}
                 },
