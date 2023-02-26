@@ -5,7 +5,7 @@ h2 {
     color: #ecdf04;
     text-align: center;
 }
-span {
+.name {
     color: white;
 }
 .friendsContainer {

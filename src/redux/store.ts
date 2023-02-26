@@ -1,7 +1,7 @@
 import {addPostAC, profileReducer, updateNewPostTextAC} from "./profile-reducer";
 import {addMessageAC, dialogsReducer, updateNewMessageTextAC} from "./dialogs-reducer";
 import {sidebarReducer} from "./sidebar-reducer";
-import {followAC, setUsersAC, unfollowAC} from "./users-reducer";
+import {followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, unfollowAC} from "./users-reducer";
 import avatar from '../assets/images/avatar.jpg'
 import {StateType} from "./redux-store";
 
@@ -38,6 +38,8 @@ export type ActionType = ReturnType<typeof addPostAC>
     | ReturnType<typeof followAC>
     | ReturnType<typeof unfollowAC>
     | ReturnType<typeof setUsersAC>
+    | ReturnType<typeof setCurrentPageAC>
+    | ReturnType<typeof setTotalUsersCountAC>
 
 
 export let store: StoreType = {
@@ -163,8 +165,12 @@ export let store: StoreType = {
                     }, status: 'Hello 3',
                     location: {city: 'Kiev', country: 'Ukraine'}
                 },
-            ]
-        }
+            ],
+            currentPage: 0,
+            totalUsersCount: 0,
+            pageSize: 0
+        },
+
     },
     _callSubscriber(_state: StateType) {
         console.log('state was changed')
