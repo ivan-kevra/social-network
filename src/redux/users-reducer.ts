@@ -1,11 +1,30 @@
-import {ActionType, UsersPageType, UserType} from "./store";
+import {ActionType} from "./store";
 
+export type PhotosType = {
+    small: string
+    large: string
+}
+export type locationType = {
+    city: string
+    country: string
+}
+export type UserType = {
+    id: number
+    followed: boolean
+    name: string
+    photos: PhotosType
+    status: string
+    location: locationType
+}
+export type InitialStateType = {
+    users: Array<UserType>
+}
 
-let initialState: UsersPageType = {
+const initialState: InitialStateType = {
     users: []
 }
 
-export const usersReducer = (state = initialState, action: ActionType) => {
+export const usersReducer = (state: InitialStateType = initialState, action: ActionType) => {
     switch (action.type) {
         case 'FOLLOW':
             return {
@@ -29,4 +48,4 @@ export const usersReducer = (state = initialState, action: ActionType) => {
 
 export const followAC = (userId: number) => ({type: 'FOLLOW', userId}) as const
 export const unfollowAC = (userId: number) => ({type: 'UNFOLLOW', userId}) as const
-export const setUsersAC = (users: UserType[]) => ({type: 'SET-USERS', users}) as const
+export const setUsersAC = (users: Array<UserType>) => ({type: 'SET-USERS', users}) as const
