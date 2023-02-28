@@ -1,7 +1,14 @@
 import {addPostAC, profileReducer, updateNewPostTextAC} from "./profile-reducer";
 import {addMessageAC, dialogsReducer, updateNewMessageTextAC} from "./dialogs-reducer";
 import {sidebarReducer} from "./sidebar-reducer";
-import {followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, unfollowAC} from "./users-reducer";
+import {
+    followAC,
+    setCurrentPageAC,
+    setTotalUsersCountAC,
+    setUsersAC,
+    toggleIsFetchingAC,
+    unfollowAC
+} from "./users-reducer";
 import avatar from '../assets/images/avatar.jpg'
 import {StateType} from "./redux-store";
 
@@ -40,6 +47,7 @@ export type ActionType = ReturnType<typeof addPostAC>
     | ReturnType<typeof setUsersAC>
     | ReturnType<typeof setCurrentPageAC>
     | ReturnType<typeof setTotalUsersCountAC>
+    | ReturnType<typeof toggleIsFetchingAC>
 
 
 export let store: StoreType = {
@@ -168,7 +176,8 @@ export let store: StoreType = {
             ],
             currentPage: 0,
             totalUsersCount: 0,
-            pageSize: 0
+            pageSize: 0,
+            isFetching: false
         },
 
     },

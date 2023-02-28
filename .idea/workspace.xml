@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6f1dafa-9daf-4ff0-a505-4a5ca49cba53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Preloader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/Users.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/UsersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +80,7 @@
       <workItem from="1676963790749" duration="22000" />
       <workItem from="1676972492274" duration="40406000" />
       <workItem from="1677228988466" duration="33446000" />
-      <workItem from="1677566576113" duration="2896000" />
+      <workItem from="1677566576113" duration="5045000" />
     </task>
     <servers />
   </component>

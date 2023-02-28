@@ -1,14 +1,14 @@
 import React from 'react';
 import style from "./Users.module.css";
 import avatar from "../../assets/images/avatar.jpg";
-import {UserType} from "../../redux/users-reducer";
+import {InitialStateType, UserType} from "../../redux/users-reducer";
 
 type UsersPropsType = {
     totalUsersCount: number
     pageSize: number
     currentPage: number
     setCurrentPage: (page: number) => void
-    usersPage: any
+    usersPage: InitialStateType
     follow: (userId: number) => void
     unfollow: (userId: number) => void
 }
