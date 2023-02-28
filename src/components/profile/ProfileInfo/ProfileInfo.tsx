@@ -1,21 +1,23 @@
 import React from 'react';
 import {UserType} from "../../../redux/users-reducer";
 import {Preloader} from "../../common/Preloader";
+import {ProfileInfoType} from "../../../redux/profile-reducer";
 
 type ProfileInfoPropsType = {
-    profile: UserType
+    profileInfo: ProfileInfoType | null
 }
 
 export const ProfileInfo = (props: ProfileInfoPropsType) => {
-    if (!props.profile) {
+    if (!props.profileInfo) {
         return <Preloader/>
-    } else {
-        return (
-            <div>
-                <img src={props.profile.photos.large}/>
-                ava+description
-            </div>
-        );
     }
+    return (
+        <div>
+            <img src={props.profileInfo.photos.large}/>
+            <span> {props.profileInfo.fullName}</span>
+            <span> {props.profileInfo.lookingForAJobDescription}</span>
+        </div>
+    );
+
 
 };

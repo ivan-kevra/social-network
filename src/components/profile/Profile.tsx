@@ -3,15 +3,16 @@ import style from './Profile.module.css'
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
 import {MyPostsContainer} from "./MyPosts/MyPostsContainer";
 import {UserType} from "../../redux/users-reducer";
+import {ProfileInfoType} from "../../redux/profile-reducer";
 
 type ProfilePropsType = {
-    profile: UserType
+    profileInfo: ProfileInfoType | null
 }
 
 export const Profile = (props: ProfilePropsType) => {
     return (
         <div className={style.content}>
-            <ProfileInfo profile={props.profile}/>
+            <ProfileInfo profileInfo={props.profileInfo}/>
             <MyPostsContainer/>
         </div>
     )

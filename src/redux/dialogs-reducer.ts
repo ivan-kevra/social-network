@@ -1,4 +1,5 @@
-import {ActionType} from "./store";
+import {ActionType} from "./users-reducer";
+
 
 export type DialogType = {
     id: number

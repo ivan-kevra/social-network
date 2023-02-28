@@ -1,4 +1,17 @@
-import {ActionType} from "./store";
+import {addPost, setUserProfile, updateNewPostText} from "./profile-reducer";
+import {addMessageAC, updateNewMessageTextAC} from "./dialogs-reducer";
+
+export type ActionType = ReturnType<typeof addPost>
+    | ReturnType<typeof updateNewPostText>
+    | ReturnType<typeof setUserProfile>
+    | ReturnType<typeof addMessageAC>
+    | ReturnType<typeof updateNewMessageTextAC>
+    | ReturnType<typeof follow>
+    | ReturnType<typeof unfollow>
+    | ReturnType<typeof setUsers>
+    | ReturnType<typeof setCurrentPage>
+    | ReturnType<typeof setTotalUsersCount>
+    | ReturnType<typeof toggleIsFetching>
 
 export type PhotosType = {
     small: string

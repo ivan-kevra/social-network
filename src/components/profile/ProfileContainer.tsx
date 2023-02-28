@@ -12,7 +12,7 @@ class ProfileContainer extends React.Component<any, any> {
     componentDidMount() {
         let userId = this.props.router.params.userId
         if (!userId) {
-            userId = 2;
+            userId = 2
         }
         axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
             .then(response => {
@@ -22,17 +22,12 @@ class ProfileContainer extends React.Component<any, any> {
 
     render() {
         return (
-            <Profile {...this.props} profile={this.props.profile}/>
+            <Profile {...this.props} profileInfo={this.props.profile}/>
         )
     }
 }
 
-let mapStateToProps = (state: StateType) => ({
-    profile: state.profilePage.profile
-})
-
 function withRouter(Component: any) {
-
     function ComponentWithRouterProp(props: any) {
         let location = useLocation();
         let navigate = useNavigate();
@@ -48,4 +43,11 @@ function withRouter(Component: any) {
     return ComponentWithRouterProp;
 }
 
-export default connect(mapStateToProps, {setUserProfile})(withRouter(ProfileContainer));
+const mapStateToProps = (state: StateType) => ({
+    profile: state.profilePage.profileInfo
+})
+
+let WithUrlDattaContainerComponent = withRouter(ProfileContainer)
+
+
+export default connect(mapStateToProps, {setUserProfile})(WithUrlDattaContainerComponent)

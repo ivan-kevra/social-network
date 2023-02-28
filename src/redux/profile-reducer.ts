@@ -1,6 +1,34 @@
-import {ActionType, ProfilePageType} from "./store";
+import {ActionType, PhotosType} from "./users-reducer";
 
+export type PostType = {
+    id: number
+    postMessage: string
+    likesCount: number
+}
+export type ContactsType = {
+    github: string
+    vk: string
+    facebook: string
+    instagram: string
+    twitter: string
+    website: string
+    youtube: string
+    mainLink: string
+}
+export type ProfileInfoType = {
+    userId: number
+    lookingForAJob: boolean
+    lookingForAJobDescription: string
+    fullName: string
+    contacts: ContactsType
+    photos: PhotosType
+}
 
+export type ProfilePageType = {
+    posts: PostType[]
+    newPostText: string
+    profileInfo: ProfileInfoType | null
+}
 let initialState = {
     posts: [
         {id: 1, postMessage: 'post 1', likesCount: 10},
@@ -8,10 +36,10 @@ let initialState = {
         {id: 3, postMessage: 'post 3', likesCount: 20},
     ],
     newPostText: '',
-    profile: ''
+    profileInfo: null
 }
 
-export const profileReducer = (state: ProfilePageType = initialState, action: ActionType) => {
+export const profileReducer = (state: ProfilePageType = initialState, action: ActionType): ProfilePageType => {
 
     switch (action.type) {
         case 'ADD-POST':
@@ -28,7 +56,7 @@ export const profileReducer = (state: ProfilePageType = initialState, action: Ac
         case 'SET-USER-PROFILE':
             return {
                 ...state,
-                profile: action.profile
+                profileInfo: action.profileInfo
             }
         default:
             return state
@@ -37,4 +65,4 @@ export const profileReducer = (state: ProfilePageType = initialState, action: Ac
 
 export const addPost = () => ({type: 'ADD-POST'}) as const
 export const updateNewPostText = (newPostText: string) => ({type: 'UPDATE-NEW-POST-TEXT', newPostText}) as const
-export const setUserProfile = (profile: string) => ({type: 'SET-USER-PROFILE', profile}) as const
+export const setUserProfile = (profileInfo: ProfileInfoType) => ({type: 'SET-USER-PROFILE', profileInfo}) as const

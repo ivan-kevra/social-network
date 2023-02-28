@@ -2,15 +2,10 @@ import React from "react";
 import style from './NavBar.module.css'
 import {NavLink} from "react-router-dom";
 import {Sidebar} from "./sidebar/Sidebar";
-import {SidebarType} from "../../redux/store";
 import {store} from "../../redux/redux-store";
 
 
-type NavBarPropsType = {
-    // navbar: SidebarType
-}
-
-export const Navbar: React.FC<NavBarPropsType> = (props) => {
+export const Navbar = () => {
 
     return (
         <nav className={style.nav}>
