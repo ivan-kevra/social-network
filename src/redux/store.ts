@@ -1,4 +1,4 @@
-import {addPostAC, profileReducer, updateNewPostTextAC} from "./profile-reducer";
+import {addPost, profileReducer, setUserProfile, updateNewPostText} from "./profile-reducer";
 import {addMessageAC, dialogsReducer, updateNewMessageTextAC} from "./dialogs-reducer";
 import {sidebarReducer} from "./sidebar-reducer";
 import {
@@ -26,6 +26,7 @@ export type FriendType = {
 export type ProfilePageType = {
     posts: PostType[]
     newPostText: string
+    profile: string
 }
 export type SidebarType = {
     friends: FriendType[]
@@ -38,8 +39,9 @@ export type StoreType = {
     dispatch: (action: ActionType) => void
 }
 
-export type ActionType = ReturnType<typeof addPostAC>
-    | ReturnType<typeof updateNewPostTextAC>
+export type ActionType = ReturnType<typeof addPost>
+    | ReturnType<typeof updateNewPostText>
+    | ReturnType<typeof setUserProfile>
     | ReturnType<typeof addMessageAC>
     | ReturnType<typeof updateNewMessageTextAC>
     | ReturnType<typeof follow>
@@ -58,7 +60,8 @@ export let store: StoreType = {
                 {id: 2, postMessage: 'post 2', likesCount: 15},
                 {id: 3, postMessage: 'post 3', likesCount: 20},
             ],
-            newPostText: ''
+            newPostText: '',
+            profile: ''
         },
         dialogsPage: {
             messages: [
