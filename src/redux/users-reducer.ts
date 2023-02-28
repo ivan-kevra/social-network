@@ -52,7 +52,6 @@ export const usersReducer = (state: InitialStateType = initialState, action: Act
                 ...state,
                 currentPage: action.pageNumber
             }
-
         case 'SET-TOTAL-USERS-COUNT':
             return {
                 ...state,

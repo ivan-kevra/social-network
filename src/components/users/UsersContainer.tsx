@@ -8,9 +8,10 @@ import {
     unfollowAC,
     UserType
 } from "../../redux/users-reducer";
-import {Users} from "./Users";
 import {StateType} from "../../redux/redux-store";
 import {Dispatch} from "redux";
+import axios from "axios";
+import {Users} from "./Users";
 
 type MapStateToPropsType = {
     usersPage: InitialStateType
@@ -24,6 +25,39 @@ type MapDispatchToPropsType = {
     setUsers: (users: Array<UserType>) => void
     setCurrentPage: (pageNumber: number) => void
     setTotalUsersCount: (totalUsersCount: number) => void
+}
+
+
+class UsersContainer extends React.Component<any, any> {
+
+    componentDidMount = () => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items)
+                this.props.setTotalUsersCount(response.data.totalCount)
+            })
+    }
+
+    setCurrentPage = (currentPage: number) => {
+        this.props.setCurrentPage(currentPage)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items)
+            })
+    }
+
+    render() {
+
+        return (
+            <Users totalUsersCount={this.props.totalUsersCount}
+                   pageSize={this.props.pageSize}
+                   currentPage={this.props.currentPage}
+                   setCurrentPage={this.setCurrentPage}
+                   usersPage={this.props.usersPage}
+                   follow={this.props.follow}
+                   unfollow={this.props.unfollow}/>
+        );
+    }
 }
 
 let mapStateToProps = (state: StateType): MapStateToPropsType => {
@@ -54,5 +88,5 @@ let mapDispatchToProps = (dispatch: Dispatch): MapDispatchToPropsType => {
     }
 }
 
-export const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users)
 
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
