@@ -1,4 +1,7 @@
 import {ActionType, PhotosType} from "./users-reducer";
+import {Dispatch} from "redux";
+import {headerAPI, profileAPI} from "../api/api";
+import {setAuthUserData} from "./auth-reducer";
 
 export type PostType = {
     id: number
@@ -66,3 +69,14 @@ export const profileReducer = (state: ProfilePageType = initialState, action: Ac
 export const addPost = () => ({type: 'ADD-POST'}) as const
 export const updateNewPostText = (newPostText: string) => ({type: 'UPDATE-NEW-POST-TEXT', newPostText}) as const
 export const setUserProfile = (profileInfo: ProfileInfoType) => ({type: 'SET-USER-PROFILE', profileInfo}) as const
+
+export const setUserProfileData = (userId: number) => {
+    return (dispatch: Dispatch) => {
+        if (!userId) {
+            userId = 2
+        }
+        profileAPI.getProfile(userId).then(data => {
+            dispatch(setUserProfile(data))
+        })
+    }
+}
