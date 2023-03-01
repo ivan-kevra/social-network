@@ -1,5 +1,6 @@
 import {addPost, setUserProfile, updateNewPostText} from "./profile-reducer";
 import {addMessageAC, updateNewMessageTextAC} from "./dialogs-reducer";
+import {setAuthUserData} from "./auth-reducer";
 
 export type ActionType = ReturnType<typeof addPost>
     | ReturnType<typeof updateNewPostText>
@@ -12,6 +13,7 @@ export type ActionType = ReturnType<typeof addPost>
     | ReturnType<typeof setCurrentPage>
     | ReturnType<typeof setTotalUsersCount>
     | ReturnType<typeof toggleIsFetching>
+    | ReturnType<typeof setAuthUserData>
 
 export type PhotosType = {
     small: string
