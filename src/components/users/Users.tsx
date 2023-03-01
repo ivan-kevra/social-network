@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./Users.module.css";
 import avatar from "../../assets/images/avatar.jpg";
-import {InitialStateType, UserType} from "../../redux/users-reducer";
+import {InitialStateType, toggleIsFollowingProgress, UserType} from "../../redux/users-reducer";
 import {NavLink} from "react-router-dom";
 import {profileAPI} from "../../api/api";
 
@@ -13,6 +13,8 @@ type UsersPropsType = {
     usersPage: InitialStateType
     follow: (userId: number) => void
     unfollow: (userId: number) => void
+    toggleIsFollowingProgress: (followingInProgress: boolean, userId: number) => void
+    followingInProgress: Array<number>
 }
 
 export const Users: React.FC<UsersPropsType> = (props) => {
@@ -45,16 +47,20 @@ export const Users: React.FC<UsersPropsType> = (props) => {
                         </div>
                         <div>
                     {user.followed
-                        ? <button onClick={() => {
+                        ? <button disabled={props.followingInProgress.some((id: number) => id === user.id)} onClick={() => {
+                            props.toggleIsFollowingProgress(true, user.id)
                             profileAPI.unfollowUser(user.id).then(data => {
+                                props.toggleIsFollowingProgress(false, user.id)
                                 if (data.resultCode === 0) {
                                     props.unfollow(user.id)
                                 }
 
                             })
                         }}>unfollow</button>
-                        : <button onClick={() => {
+                        : <button disabled={props.followingInProgress.some((id: number) => id === user.id)} onClick={() => {
+                            props.toggleIsFollowingProgress(true, user.id)
                             profileAPI.followUser(user.id).then(data => {
+                                props.toggleIsFollowingProgress(false, user.id)
                                 if (data.resultCode === 0) {
                                     props.follow(user.id)
                                 }

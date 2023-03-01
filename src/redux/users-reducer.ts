@@ -14,6 +14,7 @@ export type ActionType = ReturnType<typeof addPost>
     | ReturnType<typeof setTotalUsersCount>
     | ReturnType<typeof toggleIsFetching>
     | ReturnType<typeof setAuthUserData>
+    | ReturnType<typeof toggleIsFollowingProgress>
 
 export type PhotosType = {
     small: string
@@ -37,6 +38,7 @@ export type InitialStateType = {
     totalUsersCount: number
     currentPage: number
     isFetching: boolean
+    followingInProgress: any
 }
 
 const initialState: InitialStateType = {
@@ -44,10 +46,11 @@ const initialState: InitialStateType = {
     pageSize: 100,
     totalUsersCount: 0,
     currentPage: 2,
-    isFetching: false
+    isFetching: false,
+    followingInProgress: []
 }
 
-export const usersReducer = (state: InitialStateType = initialState, action: ActionType) => {
+export const usersReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case 'FOLLOW':
             return {
@@ -79,6 +82,13 @@ export const usersReducer = (state: InitialStateType = initialState, action: Act
                 ...state,
                 isFetching: action.isFetching
             }
+        case 'TOGGLE-IS-FOLLOWING-PROGRESS':
+            return {
+                ...state,
+                followingInProgress: action.followingInProgress
+                    ? [...state.followingInProgress, action.userId]
+                    : state.followingInProgress.filter((userId: number) => userId !== action.userId)
+            }
         default:
             return state
     }
@@ -93,3 +103,9 @@ export const setTotalUsersCount = (totalUsersCount: number) => ({
     totalUsersCount
 }) as const
 export const toggleIsFetching = (isFetching: boolean) => ({type: 'TOGGLE-IS-FETCHING', isFetching}) as const
+export const toggleIsFollowingProgress = (followingInProgress: boolean, userId: number) => ({
+    type: 'TOGGLE-IS-FOLLOWING-PROGRESS',
+    followingInProgress,
+    userId
+
+}) as const
