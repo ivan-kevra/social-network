@@ -17,17 +17,14 @@ export const usersAPI = {
     },
     follow(userId: number) {
         return instance.post(`/follow/${userId}`, {}).then(response => response.data)
-    }
-}
-
-export const profileAPI = {
+    },
     getProfile(userId: number) {
         return instance.get(`/profile/${userId}`).then(response => response.data)
     },
-
 }
 
-export const headerAPI = {
+
+export const authAPI = {
     getAuth() {
         return instance.get(`/auth/me`).then(response => response.data)
     }

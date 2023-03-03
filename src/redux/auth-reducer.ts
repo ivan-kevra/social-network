@@ -1,6 +1,6 @@
 import {ActionType} from "./users-reducer";
 import {Dispatch} from "redux";
-import {headerAPI} from "../api/api";
+import {authAPI} from "../api/api";
 
 type initialStateType = {
     id: number | null
@@ -33,9 +33,9 @@ export const setAuthUserData = (userId: number, login: string, email: string) =>
     data: {userId, login, email}
 }) as const
 
-export const setUserData = () => {
+export const getUserData = () => {
     return (dispatch: Dispatch) => {
-        headerAPI.getAuth().then(data => {
+        authAPI.getAuth().then(data => {
             if (data.resultCode === 0) {
                 let {id, login, email} = data.data
                 dispatch(setAuthUserData(id, login, email))

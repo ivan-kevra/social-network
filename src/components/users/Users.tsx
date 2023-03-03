@@ -1,9 +1,8 @@
 import React from 'react';
 import style from "./Users.module.css";
 import avatar from "../../assets/images/avatar.jpg";
-import {InitialStateType, toggleIsFollowingProgress, UserType} from "../../redux/users-reducer";
+import {InitialStateType, UserType} from "../../redux/users-reducer";
 import {NavLink} from "react-router-dom";
-import {profileAPI, usersAPI} from "../../api/api";
 
 type UsersPropsType = {
     totalUsersCount: number
