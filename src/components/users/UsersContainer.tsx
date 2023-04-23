@@ -14,7 +14,6 @@ import {Preloader} from "../common/Preloader";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
 
-
 type MapStateToPropsType = {
     usersPage: InitialStateType
     pageSize: number
@@ -23,7 +22,6 @@ type MapStateToPropsType = {
     isFetching: boolean
     followingInProgress: Array<number>
 }
-
 
 class UsersContainer extends React.Component<any, any> {
 
