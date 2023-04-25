@@ -1,4 +1,4 @@
-import {addPost, setUserProfile, updateNewPostText} from "./profile-reducer";
+import {addPost, setUserProfile, setStatus, updateNewPostText} from "./profile-reducer";
 import {addMessageAC, updateNewMessageTextAC} from "./dialogs-reducer";
 import {setAuthUserData} from "./auth-reducer";
 import {usersAPI} from "../api/api";
@@ -17,6 +17,7 @@ export type ActionType = ReturnType<typeof addPost>
     | ReturnType<typeof toggleIsFetching>
     | ReturnType<typeof setAuthUserData>
     | ReturnType<typeof toggleIsFollowingProgress>
+    | ReturnType<typeof setStatus>
 
 export type PhotosType = {
     small: string

@@ -19,16 +19,28 @@ export const usersAPI = {
         return instance.post(`/follow/${userId}`, {}).then(response => response.data)
     },
     getProfile(userId: number) {
-        return instance.get(`/profile/${userId}`).then(response => response.data)
+        console.warn('Obsolete method. Please use profile API object')
+        return profileAPI.getProfile(userId)
     },
 }
 
 export const authAPI = {
     getAuth() {
-        return instance.get(`/auth/me`).then(response => response.data)
+        return instance.get(`/auth/me`).then(res => res.data)
     }
 }
 
+export const profileAPI = {
+    getProfile(userId: number) {
+        return instance.get(`/profile/${userId}`).then(res => res.data)
+    },
+    getStatus(userId: number) {
+        return instance.get(`/profile/status/${userId}`).then(res => res.data)
+    },
+    updateStatus(status: string) {
+        return instance.put(`/profile/status`, {status}).then(res => res.data)
+    },
+}
 
 
 

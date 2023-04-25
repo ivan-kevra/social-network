@@ -8,12 +8,14 @@ import {Navigate} from "react-router-dom";
 
 type ProfilePropsType = {
     profileInfo: ProfileInfoType | null
+    status: string
+    updateStatus: () => void
 }
 
 export const Profile = (props: ProfilePropsType) => {
     return (
         <div className={style.content}>
-            <ProfileInfo profileInfo={props.profileInfo}/>
+            <ProfileInfo profileInfo={props.profileInfo} status={props.status} updateStatus={props.updateStatus}/>
             <MyPostsContainer/>
         </div>
     )
