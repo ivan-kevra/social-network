@@ -1,9 +1,9 @@
 import {Navigate} from "react-router-dom";
 import React from "react";
-import {StateType} from "../redux/redux-store";
+import {AppRootStateType} from "../redux/redux-store";
 import {connect} from "react-redux";
 
-let mapStateToPropsForRedirect = (state: StateType) => ({
+let mapStateToPropsForRedirect = (state: AppRootStateType) => ({
     isAuth: state.auth.isAuth
 })
 

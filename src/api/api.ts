@@ -27,7 +27,11 @@ export const usersAPI = {
 export const authAPI = {
     getAuth() {
         return instance.get(`/auth/me`).then(res => res.data)
-    }
+
+    },
+    login(data: LoginParamsType) {
+        return instance.post('/auth/login', data)
+    },
 }
 
 export const profileAPI = {
@@ -42,7 +46,12 @@ export const profileAPI = {
     },
 }
 
-
+export type LoginParamsType = {
+    email: string
+    password: string
+    rememberMe: boolean
+    captcha?: string
+}
 
 
 

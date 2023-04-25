@@ -1,7 +1,7 @@
 import React from "react";
 import {Profile} from "./Profile";
 import {connect} from "react-redux";
-import {StateType} from "../../redux/redux-store";
+import {AppRootStateType} from "../../redux/redux-store";
 import {getStatus, getUserProfile, updateStatus} from "../../redux/profile-reducer";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
@@ -46,7 +46,7 @@ function withRouter(Component: any) {
 }
 
 
-let mapStateToProps = (state: StateType) => ({
+let mapStateToProps = (state: AppRootStateType) => ({
     profile: state.profilePage.profileInfo,
     status: state.profilePage.status
 })
