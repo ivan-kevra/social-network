@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f6f1dafa-9daf-4ff0-a505-4a5ca49cba53" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileInfo/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileInfo/profileStatus/ProfileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileInfo/profileStatus/ProfileStatus.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +86,7 @@
       <workItem from="1682259585368" duration="5509000" />
       <workItem from="1682266798406" duration="6000" />
       <workItem from="1682332972681" duration="3119000" />
-      <workItem from="1682389450519" duration="5345000" />
+      <workItem from="1682389450519" duration="6067000" />
     </task>
     <servers />
   </component>

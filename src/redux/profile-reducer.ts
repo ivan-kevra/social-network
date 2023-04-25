@@ -40,7 +40,7 @@ let initialState: ProfilePageType = {
     ],
     newPostText: '',
     profileInfo: null,
-    status: 'Set new status'
+    status: ''
 }
 
 export const profileReducer = (state: ProfilePageType = initialState, action: ActionType): ProfilePageType => {
