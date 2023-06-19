@@ -28,7 +28,6 @@ class ProfileContainer extends React.Component<any, any> {
     }
 }
 
-
 function withRouter(Component: any) {
     function ComponentWithRouterProp(props: any) {
         let location = useLocation();
@@ -45,12 +44,10 @@ function withRouter(Component: any) {
     return ComponentWithRouterProp;
 }
 
-
 let mapStateToProps = (state: AppRootStateType) => ({
     profile: state.profilePage.profileInfo,
     status: state.profilePage.status
 })
-
 export default compose<React.ComponentType>(
     connect(mapStateToProps, {getUserProfile, getStatus, updateStatus}),
     withRouter,

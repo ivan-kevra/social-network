@@ -1,14 +1,12 @@
-import {addPost, setUserProfile, setStatus, updateNewPostText} from "./profile-reducer";
-import {addMessageAC, updateNewMessageTextAC} from "./dialogs-reducer";
+import {addPost, setStatus, setUserProfile} from "./profile-reducer";
+import {addMessageAC} from "./dialogs-reducer";
 import {setAuthUserData, setIsLoggedInAC} from "./auth-reducer";
 import {usersAPI} from "../api/api";
 import {Dispatch} from "redux";
 
 export type ActionType = ReturnType<typeof addPost>
-    | ReturnType<typeof updateNewPostText>
     | ReturnType<typeof setUserProfile>
     | ReturnType<typeof addMessageAC>
-    | ReturnType<typeof updateNewMessageTextAC>
     | ReturnType<typeof followSuccess>
     | ReturnType<typeof unfollowSuccess>
     | ReturnType<typeof setUsers>

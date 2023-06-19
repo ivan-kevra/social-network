@@ -42,7 +42,6 @@ let initialState = {
             avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
         },
     ] as Array<MessageType>,
-    newMessageText: '',
     dialogs: [
         {
             id: 1,
@@ -80,28 +79,19 @@ let initialState = {
 export const dialogsReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case 'ADD-MESSAGE':
+            let body = action.newMessage
             return {
                 ...state,
                 messages: [...state.messages, {
                     id: 5,
-                    message: state.newMessageText,
+                    message: body,
                     userId: 1,
                     avatar: 'https://www.shutterstock.com/shutterstock/photos/1606423033/display_1500/stock-vector-portrait-of-a-happy-man-avatar-of-a-guy-for-social-network-colorful-portrait-student-of-the-1606423033.jpg'
                 }],
-                newMessageText: ''
-            }
-        case 'UPDATE-NEW-MESSAGE-TEXT':
-            return {
-                ...state,
-                newMessageText: action.newMessageText
             }
         default:
             return state
     }
 }
 
-export const addMessageAC = () => ({type: 'ADD-MESSAGE'}) as const
-export const updateNewMessageTextAC = (newMessageText: string) => ({
-    type: 'UPDATE-NEW-MESSAGE-TEXT',
-    newMessageText
-}) as const
+export const addMessageAC = (newMessage: string) => ({type: 'ADD-MESSAGE', newMessage}) as const

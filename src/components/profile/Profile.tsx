@@ -1,10 +1,8 @@
 import React from "react";
 import style from './Profile.module.css'
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
-import {MyPostsContainer} from "./MyPosts/MyPostsContainer";
-import {UserType} from "../../redux/users-reducer";
+import {MyPostsContainer} from "./MyPosts/MyPostsContainer"
 import {ProfileInfoType} from "../../redux/profile-reducer";
-import {Navigate} from "react-router-dom";
 
 type ProfilePropsType = {
     profileInfo: ProfileInfoType | null
