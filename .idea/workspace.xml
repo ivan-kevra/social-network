@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6f1dafa-9daf-4ff0-a505-4a5ca49cba53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/login/style.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/HeaderContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/HeaderContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsControls/style.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/Login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.ts" afterDir="false" />
     </list>
@@ -23,6 +23,7 @@
         <option value="tsconfig.json" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -53,6 +54,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "F:/projects/Social-network/src/components/common/FormsControls",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -106,7 +108,8 @@
       <workItem from="1684834790332" duration="655000" />
       <workItem from="1684839518892" duration="48000" />
       <workItem from="1687176675945" duration="8267000" />
-      <workItem from="1687242536300" duration="15838000" />
+      <workItem from="1687242536300" duration="15925000" />
+      <workItem from="1687268457868" duration="4580000" />
     </task>
     <servers />
   </component>

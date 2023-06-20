@@ -11,6 +11,7 @@ import {loginTC} from "../redux/auth-reducer";
 import {loginValidator} from '../utils/validators/validators';
 import {Input} from "../components/common/FormsControls/FormControls";
 import {Navigate} from "react-router-dom";
+import style from './style.module.css'
 
 
 export type FormikErrorType = {
@@ -29,12 +30,13 @@ export const Login = () => {
         initialValues: {
             email: '',
             password: '',
-            rememberMe: false
+            rememberMe: false,
+            general: ''
         },
         validate: (values: FormikErrorType) => loginValidator(values),
-        onSubmit: values => {
+        onSubmit: (values, {setFieldValue}) => {
             console.log(values)
-            dispatch(loginTC(values))
+            dispatch(loginTC(values, setFieldValue))
         },
     })
 
@@ -58,6 +60,9 @@ export const Login = () => {
                 <Button type={'submit'} variant={'contained'} color={'primary'}>
                     Login
                 </Button>
+                <div>
+                    {formik.values.general ? <span>{formik.values.general}</span> : null}
+                </div>
             </FormGroup>
         </FormControl>
     </form>

@@ -20,7 +20,7 @@ export const authReducer = (state: initialStateType = initialState, action: Acti
         case 'SET-USER-DATA':
             return {
                 ...state,
-                ...action.payload,
+                ...action.payload, id: action.payload.userId
             }
         case 'SET-IS-LOGGED-IN':
             return {
@@ -48,14 +48,13 @@ export const getUserData = () => {
         })
     }
 }
-export const loginTC = (data: LoginParamsType) => (dispatch: any) => {
+export const loginTC = (data: LoginParamsType, setFieldValue: (field: string, isTouched?: boolean, shouldValidate?: boolean) => void) => (dispatch: any) => {
     authAPI.login(data)
         .then(res => {
             if (res.data.resultCode === 0) {
                 dispatch(getUserData())
-
             } else {
-                alert('Error')
+                setFieldValue("general", res.data.messages.join(" "))
             }
         })
         .catch((error) => {
