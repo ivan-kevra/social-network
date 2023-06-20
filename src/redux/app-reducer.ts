@@ -50,7 +50,6 @@ export const setIsLoggedInAC = (value: boolean) => ({type: 'SET-IS-LOGGED-IN', v
 
 
 export const initializeApp = () => (dispatch: any) => {
-    debugger
     let promise = dispatch(getAuthUserData())
     promise.then(() => {
         dispatch(initializedSuccess())
