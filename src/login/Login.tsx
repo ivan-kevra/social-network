@@ -7,11 +7,10 @@ import Button from '@mui/material/Button';
 import {useFormik} from "formik";
 import {useSelector} from "react-redux";
 import {AppRootStateType, useAppDispatch} from "../redux/redux-store";
-import {loginTC} from "../redux/auth-reducer";
+import {loginTC} from "../redux/app-reducer";
 import {loginValidator} from '../utils/validators/validators';
 import {Input} from "../components/common/FormsControls/FormControls";
 import {Navigate} from "react-router-dom";
-import style from './style.module.css'
 
 
 export type FormikErrorType = {
@@ -24,7 +23,7 @@ export const Login = () => {
 
     const dispatch = useAppDispatch()
 
-    const isAuth = useSelector<AppRootStateType, boolean>(state => state.auth.isAuth)
+    const isAuth = useSelector<AppRootStateType, boolean>(state => state.app.isAuth)
 
     const formik = useFormik({
         initialValues: {

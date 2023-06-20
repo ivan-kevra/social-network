@@ -1,6 +1,6 @@
 import {addPost, setStatus, setUserProfile} from "./profile-reducer";
 import {addMessageAC} from "./dialogs-reducer";
-import {setAuthUserData, setIsLoggedInAC} from "./auth-reducer";
+import {setAuthUserData, initializedSuccess, setIsLoggedInAC} from "./app-reducer";
 import {usersAPI} from "../api/api";
 import {Dispatch} from "redux";
 
@@ -17,6 +17,7 @@ export type ActionType = ReturnType<typeof addPost>
     | ReturnType<typeof toggleIsFollowingProgress>
     | ReturnType<typeof setStatus>
     | ReturnType<typeof setIsLoggedInAC>
+    | ReturnType<typeof initializedSuccess>
 
 export type PhotosType = {
     small: string

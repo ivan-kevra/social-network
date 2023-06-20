@@ -25,7 +25,7 @@ export const usersAPI = {
 }
 
 export const authAPI = {
-    getAuth() {
+    me() {
         return instance.get(`/auth/me`).then(res => res.data)
     },
     login(data: LoginParamsType) {

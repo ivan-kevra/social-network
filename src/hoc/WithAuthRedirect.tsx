@@ -4,7 +4,7 @@ import {AppRootStateType} from "../redux/redux-store";
 import {connect} from "react-redux";
 
 let mapStateToPropsForRedirect = (state: AppRootStateType) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.app.isAuth
 })
 
 export const WithAuthRedirect = (Component: any) => {
