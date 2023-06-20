@@ -4,15 +4,14 @@ import {DialogItem} from "./dialogItem/DialogItem";
 import {Message} from "./message/Message";
 import {InitialStateType} from "../../redux/dialogs-reducer";
 import {Navigate} from "react-router-dom";
-import TextField from "@mui/material/TextField";
-import {useSelector} from "react-redux";
 import {useFormik} from "formik";
-import {AppRootStateType, useAppDispatch} from '../../redux/redux-store';
 import Button from "@mui/material/Button";
+import {maxLengthMessageValidator, MessageErrorType} from "../../utils/validators/validators";
+import {Textarea} from "../common/FormsControls/FormControls";
 
 
 type dialogsStatePropsType = {
-    addMessage: (newMessage: string) => void
+    addMessage: (newMessage: string | undefined) => void
     updateNewMessageText: (newMessageText: string) => void
     dialogsPage: InitialStateType
     isAuth: boolean
@@ -36,8 +35,8 @@ export const Dialogs: React.FC<dialogsStatePropsType> = (props) => {
         )
     })
 
-    const addMessageHandler = (value: { message: string }) => {
-        props.addMessage(value.message)
+    const addMessageHandler = (message: string | undefined) => {
+        props.addMessage(message)
     }
     if (!props.isAuth) return <Navigate to={'/login'}/>
 
@@ -52,36 +51,27 @@ export const Dialogs: React.FC<dialogsStatePropsType> = (props) => {
 
 
 type AddMessageFormPropsType = {
-    addMessageHandler: (value: { message: string }) => void
+    addMessageHandler: (message: string | undefined) => void
 }
+
 const AddMessageForm = (props: AddMessageFormPropsType) => {
-    const dispatch = useAppDispatch()
-
-    const isAuth = useSelector<AppRootStateType, boolean>(state => state.auth.isAuth)
-
     const formik = useFormik({
         initialValues: {
             message: ''
         },
-        validate: (values) => {
-            const errors = {}
-        },
+        validate: (values: MessageErrorType) => maxLengthMessageValidator(10, values),
         onSubmit: values => {
-            console.log(values)
-            props.addMessageHandler(values)
+            console.log(values.message)
+            props.addMessageHandler(values.message)
             // dispatch(loginTC(values))
         },
     })
     return <form onSubmit={formik.handleSubmit}>
-        <TextField label="message"
-                   margin="normal"
-                   {...formik.getFieldProps('message')}
-                   onBlur={formik.handleBlur}/>
+        <Textarea item={formik.errors.message}
+                  {...formik.getFieldProps('message')}
+                  onBlur={formik.handleBlur}/>
         <Button type={'submit'} variant={'contained'} color={'primary'}>
             Send
         </Button>
-        {
-            formik.errors.message ? <div style={{color: 'red'}}>{formik.errors.message}</div> : null
-        }
     </form>
 }

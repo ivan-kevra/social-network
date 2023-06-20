@@ -1,8 +1,9 @@
 import React from 'react';
-import {UserType} from "../../../redux/users-reducer";
-import {Preloader} from "../../common/Preloader";
+
 import {ProfileInfoType} from "../../../redux/profile-reducer";
+import {Preloader} from '../../common/preloader/Preloader';
 import ProfileStatus from "./profileStatus/ProfileStatus";
+
 
 type ProfileInfoPropsType = {
     profileInfo: ProfileInfoType | null

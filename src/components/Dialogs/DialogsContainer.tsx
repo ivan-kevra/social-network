@@ -14,11 +14,12 @@ let mapStateToProps = (state: AppRootStateType) => {
 }
 let mapDispatchToProps = (dispatch: any) => {
     return {
-        addMessage: (newMessage: string) => dispatch(addMessageAC(newMessage)),}
+        addMessage: (newMessage: string) => dispatch(addMessageAC(newMessage)),
+    }
 }
 
 
 export default compose<React.ComponentType>(
     connect(mapStateToProps, mapDispatchToProps),
-        WithAuthRedirect
+    WithAuthRedirect
 )(Dialogs)

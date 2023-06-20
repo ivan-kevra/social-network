@@ -10,9 +10,9 @@ import {
 } from "../../redux/users-reducer";
 import {AppRootStateType} from "../../redux/redux-store";
 import {Users} from "./Users";
-import {Preloader} from "../common/Preloader";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
+import {Preloader} from "../common/preloader/Preloader";
 
 type MapStateToPropsType = {
     usersPage: InitialStateType
