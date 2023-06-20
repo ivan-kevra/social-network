@@ -9,7 +9,8 @@ import {useSelector} from "react-redux";
 import {AppRootStateType, useAppDispatch} from "../redux/redux-store";
 import {loginTC} from "../redux/auth-reducer";
 import {loginValidator} from '../utils/validators/validators';
-import {Input, Textarea} from "../components/common/FormsControls/FormControls";
+import {Input} from "../components/common/FormsControls/FormControls";
+import {Navigate} from "react-router-dom";
 
 
 export type FormikErrorType = {
@@ -36,6 +37,10 @@ export const Login = () => {
             dispatch(loginTC(values))
         },
     })
+
+    if (isAuth) {
+        return <Navigate to={'/profile'}/>
+    }
 
     return <form onSubmit={formik.handleSubmit}>
         <FormControl>
