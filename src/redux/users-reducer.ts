@@ -1,4 +1,4 @@
-import {addPost, setStatus, setUserProfile} from "./profile-reducer";
+import {addPost, deletePost, setStatus, setUserProfile} from "./profile-reducer";
 import {addMessageAC} from "./dialogs-reducer";
 import {setAuthUserData, initializedSuccess, setIsLoggedInAC} from "./app-reducer";
 import {usersAPI} from "../api/api";
@@ -18,6 +18,7 @@ export type ActionType = ReturnType<typeof addPost>
     | ReturnType<typeof setStatus>
     | ReturnType<typeof setIsLoggedInAC>
     | ReturnType<typeof initializedSuccess>
+    | ReturnType<typeof deletePost>
 
 export type PhotosType = {
     small: string

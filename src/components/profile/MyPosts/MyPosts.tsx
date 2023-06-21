@@ -15,7 +15,7 @@ type PostsPropsType = {
 
 export const MyPosts: React.FC<PostsPropsType> = React.memo((props) => {
 
-    let postsElements = props.posts.map((post) => {
+    let postsElements = [...props.posts].reverse().map((post) => {
         return <Post key={post.id} message={post.postMessage} likesCount={post.likesCount}/>
     })
     const addPostHandler = (value: { post: string }) => {

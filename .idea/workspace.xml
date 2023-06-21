@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6f1dafa-9daf-4ff0-a505-4a5ca49cba53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/redux/profile-reducer.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/MyPosts/MyPosts.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +53,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "F:/projects/Social-network/src/components/profile/ProfileInfo/profileStatus",
+    "last_opened_file_path": "F:/projects/Social-network/src/redux",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -58,6 +61,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "F:/projects/Social-network/node_modules/react-scripts",
     "nodejs_package_manager_path": "yarn",
     "settings.editor.selected.configurable": "preferences.sourceCode.TypeScript",
     "ts.external.directory.path": "F:\\projects\\Social-network\\node_modules\\typescript\\lib",
@@ -66,16 +70,32 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\projects\Social-network\src\redux" />
       <recent name="F:\projects\Social-network\src\components\profile\ProfileInfo\profileStatus" />
       <recent name="F:\projects\Social-network\src\components\common\FormsControls" />
       <recent name="E:\it-incubator\samurai\src\components\header" />
       <recent name="E:\it-incubator\samurai\src\redux" />
-      <recent name="E:\it-incubator\samurai\src\components\profile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\projects\Social-network\src\components\common\preloader" />
       <recent name="E:\it-incubator\samurai\src\components\navBar" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="All Tests" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.All Tests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -108,7 +128,7 @@
       <workItem from="1687242536300" duration="15925000" />
       <workItem from="1687268457868" duration="4636000" />
       <workItem from="1687295224432" duration="6411000" />
-      <workItem from="1687332739359" duration="8429000" />
+      <workItem from="1687332739359" duration="11135000" />
     </task>
     <servers />
   </component>
