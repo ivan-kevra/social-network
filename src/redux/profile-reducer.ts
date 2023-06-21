@@ -1,6 +1,6 @@
 import {ActionType, PhotosType} from "./users-reducer";
 import {Dispatch} from "redux";
-import {profileAPI, usersAPI} from "../api/api";
+import {profileAPI} from "../api/api";
 
 export type PostType = {
     id: number

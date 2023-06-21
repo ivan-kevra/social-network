@@ -13,7 +13,7 @@ type PostsPropsType = {
     addPost: (post: string) => void
 }
 
-export const MyPosts: React.FC<PostsPropsType> = (props) => {
+export const MyPosts: React.FC<PostsPropsType> = React.memo((props) => {
 
     let postsElements = props.posts.map((post) => {
         return <Post key={post.id} message={post.postMessage} likesCount={post.likesCount}/>
@@ -30,7 +30,7 @@ export const MyPosts: React.FC<PostsPropsType> = (props) => {
             <div className={style.posts}>{postsElements}</div>
         </div>
     );
-};
+})
 
 
 type AddPostFormPropsType = {
