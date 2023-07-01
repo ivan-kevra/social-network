@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6f1dafa-9daf-4ff0-a505-4a5ca49cba53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/hoc/WithSuspense.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/paginator/Paginator.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/paginator/Paginator.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/paginator/Paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/paginator/Paginator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navBar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navBar/sidebar/Sidebar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/sidebar/Sidebar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navBar/sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/sidebar/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/Login.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "F:/projects/Social-network/src/components/profile/ProfileInfo/profileStatus",
+    "last_opened_file_path": "F:/projects/Social-network/src/hoc",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -69,11 +71,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\projects\Social-network\src\hoc" />
       <recent name="F:\projects\Social-network\src\components\profile\ProfileInfo\profileStatus" />
       <recent name="F:\projects\Social-network\src" />
       <recent name="F:\projects\Social-network\src\components\users" />
       <recent name="F:\projects\Social-network\src\components\common\paginator" />
-      <recent name="F:\projects\Social-network\src\redux" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\projects\Social-network\src\components\common\paginator" />
@@ -145,7 +147,7 @@
       <workItem from="1687332739359" duration="16052000" />
       <workItem from="1687458277266" duration="45000" />
       <workItem from="1688215141840" duration="580000" />
-      <workItem from="1688216477843" duration="9398000" />
+      <workItem from="1688216477843" duration="11982000" />
     </task>
     <servers />
   </component>

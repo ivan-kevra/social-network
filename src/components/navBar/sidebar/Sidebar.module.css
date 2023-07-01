@@ -1,20 +1,29 @@
 .navbar {
 
 }
+
 h2 {
     color: #ecdf04;
     text-align: center;
 }
+
 .name {
     color: white;
 }
+
 .friendsContainer {
     display: flex;
     justify-content: space-around
 }
+
 .friendItem {
     display: flex;
     align-items: center;
     flex-direction: column;
 
+}
+
+img {
+    width: 50px;
+    height: 53px;
 }

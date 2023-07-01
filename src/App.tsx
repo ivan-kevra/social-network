@@ -2,15 +2,18 @@ import React from 'react';
 import './App.css';
 import {Navbar} from "./components/navBar/Navbar";
 import {Route, Routes} from "react-router-dom";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import UsersContainer from "./components/users/UsersContainer";
-import ProfileContainer from "./components/profile/ProfileContainer";
+
 import HeaderContainer from "./components/header/HeaderContainer";
-import {Login} from "./login/Login";
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import {AppRootStateType} from "./redux/store";
 import {Preloader} from "./components/common/preloader/Preloader";
+import {
+    DialogContainerWithSuspense, LoginWithSuspense,
+    ProfileContainerWithSuspense,
+    UsersContainerWithSuspense,
+    withSuspense
+} from "./hoc/WithSuspense";
 
 
 class App extends React.Component<any, any> {
@@ -28,10 +31,11 @@ class App extends React.Component<any, any> {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path="profile/:userId?" element={<ProfileContainer/>}/>
-                        <Route path="dialogs/*" element={<DialogsContainer/>}/>
-                        <Route path="users/*" element={<UsersContainer/>}/>
-                        <Route path="login/*" element={<Login/>}/>
+                        <Route path="profile/:userId?"
+                               element={<ProfileContainerWithSuspense/>}/>
+                        <Route path="dialogs/*" element={<DialogContainerWithSuspense/>}/>
+                        <Route path="users/*" element={<UsersContainerWithSuspense/>}/>
+                        <Route path="login/*" element={<LoginWithSuspense/>}/>
                     </Routes>
                 </div>
             </div>
@@ -43,8 +47,10 @@ class App extends React.Component<any, any> {
 const mapStateToProps = (state: AppRootStateType) => ({
     initialized: state.app.initialized
 })
-export default connect(mapStateToProps, {initializeApp})(App)
-//compose можно использовать
+export default connect(mapStateToProps, {
+    initializeApp
+})(App)
+
 
 
 

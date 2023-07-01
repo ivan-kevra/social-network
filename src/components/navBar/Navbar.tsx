@@ -6,7 +6,6 @@ import {store} from "../../redux/store";
 
 
 export const Navbar = () => {
-
     return (
         <nav className={style.nav}>
             <div className={style.item}>

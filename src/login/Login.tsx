@@ -19,7 +19,7 @@ export type FormikErrorType = {
     rememberMe?: boolean
 }
 
-export const Login = () => {
+const Login = () => {
 
     const dispatch = useAppDispatch()
 
@@ -66,3 +66,4 @@ export const Login = () => {
         </FormControl>
     </form>
 }
+export default Login;

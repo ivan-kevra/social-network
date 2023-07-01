@@ -15,7 +15,7 @@ export const Sidebar: React.FC<SidebarPropsType> = (props) => {
                 {props.friends.map((friend) => {
                     return (
                         <div key={friend.id} className={style.friendItem}>
-                            <img src={friend.avatar}/>
+                            <img src={friend.avatar} />
                             <span className={style.name}>{friend.name}</span>
                         </div>
                     )
