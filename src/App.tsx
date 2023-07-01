@@ -9,7 +9,7 @@ import HeaderContainer from "./components/header/HeaderContainer";
 import {Login} from "./login/Login";
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
-import {AppRootStateType} from "./redux/redux-store";
+import {AppRootStateType} from "./redux/store";
 import {Preloader} from "./components/common/preloader/Preloader";
 
 
@@ -36,7 +36,6 @@ class App extends React.Component<any, any> {
                 </div>
             </div>
         );
-
     }
 }
 

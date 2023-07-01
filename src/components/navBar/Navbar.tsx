@@ -2,7 +2,7 @@ import React from "react";
 import style from './NavBar.module.css'
 import {NavLink} from "react-router-dom";
 import {Sidebar} from "./sidebar/Sidebar";
-import {store} from "../../redux/redux-store";
+import {store} from "../../redux/store";
 
 
 export const Navbar = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import {addPost} from "../../../redux/profile-reducer";
 import {MyPosts} from "./MyPosts";
 import {connect} from "react-redux";
-import {AppRootStateType} from "../../../redux/redux-store";
+import {AppRootStateType} from "../../../redux/store";
 
 
 const mapStateToProps = (state: AppRootStateType) => {

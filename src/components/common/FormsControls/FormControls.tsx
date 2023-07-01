@@ -7,14 +7,14 @@ type FormControlPropsType = {
     children: JSX.Element
 }
 
-const FormControl = (props: FormControlPropsType) => {
-    const hasError = props.item && props.onBlur
+const FormControl = ({item, onBlur, children}: FormControlPropsType) => {
+    const hasError = item && onBlur
     return (
         <div className={`${style.formControl} ${hasError ? style.error : ''}`}>
             <div>
-                {props.children}
+                {children}
             </div>
-            {hasError && <span>{props.item}</span>}
+            {hasError && <span>{item}</span>}
         </div>
     )
 }
@@ -23,9 +23,9 @@ type TextAreaPropsType = {
     onBlur: FocusEventHandler<HTMLTextAreaElement>
     item: string | undefined
 }
-export const Textarea = (props: TextAreaPropsType) => {
-    return <FormControl item={props.item} onBlur={props.onBlur}>
-        <textarea {...props} onBlur={props.onBlur}/>
+export const Textarea = ({item, onBlur, ...props}: TextAreaPropsType) => {
+    return <FormControl item={item} onBlur={onBlur}>
+        <textarea {...props} onBlur={onBlur}/>
     </FormControl>
 }
 

@@ -49,42 +49,35 @@ export const setAuthUserData = (userId: number | null, login: string | null, ema
 export const setIsLoggedInAC = (value: boolean) => ({type: 'SET-IS-LOGGED-IN', value} as const)
 
 
-export const initializeApp = () => (dispatch: any) => {
-    let promise = dispatch(getAuthUserData())
-    promise.then(() => {
-        dispatch(initializedSuccess())
-    })
+export const initializeApp = () => async (dispatch: any) => {
+    await dispatch(getAuthUserData())
+    dispatch(initializedSuccess())
 }
 
-export const getAuthUserData = () => (dispatch: Dispatch) => {
-    return authAPI.me()
-        .then(res => {
-            if (res.resultCode === 0) {
-                let {id, login, email} = res.data
-                dispatch(setAuthUserData(id, login, email, true))
-            }
-        })
+export const getAuthUserData = () => async (dispatch: Dispatch) => {
+    const res = await authAPI.me()
+    if (res.resultCode === 0) {
+        let {id, login, email} = res.data
+        dispatch(setAuthUserData(id, login, email, true))
+    }
 }
 
-export const loginTC = (data: LoginParamsType, setFieldValue: (field: string, isTouched?: boolean, shouldValidate?: boolean) => void) => (dispatch: any) => {
-    authAPI.login(data)
-        .then(res => {
-            if (res.data.resultCode === 0) {
-                dispatch(getAuthUserData())
-            } else {
-                setFieldValue("general", res.data.messages.join(" "))
-            }
-        })
-        .catch((error) => {
-            alert('Error')
-        })
+export const loginTC = (data: LoginParamsType, setFieldValue: (field: string, isTouched?: boolean, shouldValidate?: boolean) => void) => async (dispatch: any) => {
+    const res = await authAPI.login(data)
+    try {
+        if (res.data.resultCode === 0) {
+            dispatch(getAuthUserData())
+        } else {
+            setFieldValue("general", res.data.messages.join(" "))
+        }
+    } catch (error) {
+        alert(error + 'Error')
+    }
 }
 
-export const logoutTC = () => (dispatch: any) => {
-    authAPI.logout()
-        .then(res => {
-            if (res.data.resultCode === 0) {
-                dispatch(setAuthUserData(null, null, null, false))
-            }
-        })
+export const logoutTC = () => async (dispatch: any) => {
+    const res = await authAPI.logout()
+    if (res.data.resultCode === 0) {
+        dispatch(setAuthUserData(null, null, null, false))
+    }
 }

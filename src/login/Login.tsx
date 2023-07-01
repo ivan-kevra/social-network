@@ -6,7 +6,7 @@ import FormGroup from '@mui/material/FormGroup';
 import Button from '@mui/material/Button';
 import {useFormik} from "formik";
 import {useSelector} from "react-redux";
-import {AppRootStateType, useAppDispatch} from "../redux/redux-store";
+import {AppRootStateType, useAppDispatch} from "../redux/store";
 import {loginTC} from "../redux/app-reducer";
 import {loginValidator} from '../utils/validators/validators';
 import {Input} from "../components/common/FormsControls/FormControls";
