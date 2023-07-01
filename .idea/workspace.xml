@@ -5,30 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6f1dafa-9daf-4ff0-a505-4a5ca49cba53" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/common/paginator/Paginator.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/paginator/Paginator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/users/User.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/object-helpers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/FormsControls/FormControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormsControls/FormControls.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/HeaderContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/HeaderContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navBar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/MyPosts/MyPostsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileInfo/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/Users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/Users.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/UsersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/WithAuthRedirect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/WithAuthRedirect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/app-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-selectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileInfo/profileStatus/ProfileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileInfo/profileStatus/ProfileStatus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/ProfileInfo/profileStatus/ProfileStatusWithHooks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/ProfileInfo/profileStatus/ProfileStatusWithHooks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +52,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "F:/projects/Social-network/src/components/users",
+    "last_opened_file_path": "F:/projects/Social-network/src/components/profile/ProfileInfo/profileStatus",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -88,11 +69,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\projects\Social-network\src\components\profile\ProfileInfo\profileStatus" />
+      <recent name="F:\projects\Social-network\src" />
       <recent name="F:\projects\Social-network\src\components\users" />
       <recent name="F:\projects\Social-network\src\components\common\paginator" />
       <recent name="F:\projects\Social-network\src\redux" />
-      <recent name="F:\projects\Social-network\src\components\profile\ProfileInfo\profileStatus" />
-      <recent name="F:\projects\Social-network\src\components\common\FormsControls" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\projects\Social-network\src\components\common\paginator" />
@@ -100,7 +81,7 @@
       <recent name="E:\it-incubator\samurai\src\components\navBar" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Jest.renders without crashing">
     <configuration name="All Tests" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -110,8 +91,22 @@
       <scope-kind value="ALL" />
       <method v="2" />
     </configuration>
+    <configuration name="renders without crashing" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/App.test.ts" />
+      <test-names>
+        <test-name value="renders without crashing" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.renders without crashing" />
         <item itemvalue="Jest.All Tests" />
       </list>
     </recent_temporary>
@@ -150,7 +145,7 @@
       <workItem from="1687332739359" duration="16052000" />
       <workItem from="1687458277266" duration="45000" />
       <workItem from="1688215141840" duration="580000" />
-      <workItem from="1688216477843" duration="2706000" />
+      <workItem from="1688216477843" duration="7866000" />
     </task>
     <servers />
   </component>

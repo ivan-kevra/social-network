@@ -18,8 +18,7 @@ let rootReducer = combineReducers({
     app: appReducer,
 })
 
-
-export const store = legacy_createStore(rootReducer, applyMiddleware(thunkMiddleware))
+export const store = legacy_createStore(rootReducer, applyMiddleware(thunkMiddleware),)
 
 export type AppDispatchType = ThunkDispatch<AppRootStateType, any, AnyAction>
 export const useAppDispatch = () => useDispatch<AppDispatchType>()
