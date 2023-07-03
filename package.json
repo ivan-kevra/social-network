@@ -1,6 +1,7 @@
 {
-  "name": "my-app",
+  "name": "social-network",
   "version": "0.1.0",
+  "homepage": "https://ivan-kevra.github.io/social-network",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -37,7 +38,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -61,5 +64,8 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(react-leaflet|@react-leaflet|d3-*|axios))"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
