@@ -6,8 +6,9 @@ import style from "./ProfileInfo.module.css";
 
 type ProfileDataFormPropsType = {
     profileInfo: ProfileInfoType
-    saveProfile: (formData: any) => void
+    saveProfile: any
     activateViewMode: (value: boolean) => void,
+
 }
 
 export const ProfileDataForm = ({profileInfo, saveProfile, activateViewMode}: ProfileDataFormPropsType) => {
@@ -29,10 +30,9 @@ export const ProfileDataForm = ({profileInfo, saveProfile, activateViewMode}: Pr
             }
         },
         onSubmit: (values) => {
-            console.log(values)
             saveProfile(values)
             activateViewMode(false)
-        },
+        }
     })
     return <form onSubmit={formik.handleSubmit}>
         <button type="submit">save</button>
@@ -49,7 +49,7 @@ export const ProfileDataForm = ({profileInfo, saveProfile, activateViewMode}: Pr
                                               item={formik.errors.lookingForAJob ? "yes" : "no"}
                                               type="checkbox"/>
         </div>
-        {!!profileInfo.lookingForAJob &&
+        {profileInfo.lookingForAJob &&
             <div>
                 <b>My professional skills</b>:
                 <Textarea {...formik.getFieldProps('lookingForAJobDescription')}

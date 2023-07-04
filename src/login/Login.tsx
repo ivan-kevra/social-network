@@ -11,12 +11,14 @@ import {loginTC} from "../redux/app-reducer";
 import {loginValidator} from '../utils/validators/validators';
 import {Input} from "../components/common/FormsControls/FormControls";
 import {Navigate} from "react-router-dom";
+import style from './style.module.css'
 
 
 export type FormikErrorType = {
     email?: string
     password?: string
     rememberMe?: boolean
+    captchaURL?: string
 }
 
 const Login = () => {
@@ -24,13 +26,15 @@ const Login = () => {
     const dispatch = useAppDispatch()
 
     const isAuth = useSelector<AppRootStateType, boolean>(state => state.app.isAuth)
+    const captchaURL = useSelector<AppRootStateType, null | string>(state => state.app.captchaURL)
 
     const formik = useFormik({
         initialValues: {
             email: '',
             password: '',
             rememberMe: false,
-            general: ''
+            general: '',
+            captchaURL: ''
         },
         validate: (values: FormikErrorType) => loginValidator(values),
         onSubmit: (values, {setFieldValue}) => {
@@ -62,6 +66,9 @@ const Login = () => {
                 <div>
                     {formik.values.general ? <span>{formik.values.general}</span> : null}
                 </div>
+                {captchaURL && <img src={captchaURL} className={style.image}/>}
+                {captchaURL && <Input {...formik.getFieldProps('captchaURL')}
+                                      onBlur={formik.handleBlur} item={formik.values.captchaURL}/>}
             </FormGroup>
         </FormControl>
     </form>

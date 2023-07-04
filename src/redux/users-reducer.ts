@@ -1,6 +1,6 @@
 import {addPost, deletePost, savePhotoSuccess, setStatus, setUserProfile} from "./profile-reducer";
 import {addMessageAC} from "./dialogs-reducer";
-import {initializedSuccess, setAuthUserData, setIsLoggedInAC} from "./app-reducer";
+import {getCaptchaURLSuccess, initializedSuccess, setAuthUserData, setIsLoggedInAC} from "./app-reducer";
 import {usersAPI} from "../api/api";
 import {Dispatch} from "redux";
 import {updateObjectInArray} from "../utils/object-helpers";
@@ -21,6 +21,7 @@ export type ActionType = ReturnType<typeof addPost>
     | ReturnType<typeof initializedSuccess>
     | ReturnType<typeof deletePost>
     | ReturnType<typeof savePhotoSuccess>
+    | ReturnType<typeof getCaptchaURLSuccess>
 
 export type PhotosType = {
     small: string
