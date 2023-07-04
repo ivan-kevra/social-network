@@ -10,16 +10,22 @@ type ProfilePropsType = {
     updateStatus: () => void
     isOwner: boolean
     savePhoto: (mainPhoto: any) => void
+    saveProfile: (formData: any) => void
+
 }
 
-export const Profile = (props: ProfilePropsType) => {
+export const Profile = ({
+                            profileInfo, isOwner, status, updateStatus, savePhoto,
+                            saveProfile
+                        }: ProfilePropsType) => {
     return (
         <div className={style.content}>
-            <ProfileInfo profileInfo={props.profileInfo}
-                         status={props.status}
-                         updateStatus={props.updateStatus}
-                         isOwner={props.isOwner}
-                         savePhoto={props.savePhoto}
+            <ProfileInfo profileInfo={profileInfo}
+                         status={status}
+                         updateStatus={updateStatus}
+                         isOwner={isOwner}
+                         savePhoto={savePhoto}
+                         saveProfile={saveProfile}
             />
             <MyPostsContainer/>
         </div>

@@ -32,6 +32,7 @@ export const Textarea = ({item, onBlur, ...props}: TextAreaPropsType) => {
 type InputPropsType = {
     onBlur: FocusEventHandler<HTMLInputElement>
     item: string | undefined
+    type?: any
 }
 export const Input = (props: InputPropsType) => {
     return <FormControl item={props.item} onBlur={props.onBlur}>

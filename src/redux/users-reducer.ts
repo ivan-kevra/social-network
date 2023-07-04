@@ -1,6 +1,6 @@
 import {addPost, deletePost, savePhotoSuccess, setStatus, setUserProfile} from "./profile-reducer";
 import {addMessageAC} from "./dialogs-reducer";
-import {setAuthUserData, initializedSuccess, setIsLoggedInAC} from "./app-reducer";
+import {initializedSuccess, setAuthUserData, setIsLoggedInAC} from "./app-reducer";
 import {usersAPI} from "../api/api";
 import {Dispatch} from "redux";
 import {updateObjectInArray} from "../utils/object-helpers";

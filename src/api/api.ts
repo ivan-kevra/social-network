@@ -55,7 +55,10 @@ export const profileAPI = {
             }
 
         })
-    }
+    },
+    saveProfile(profile: any) {
+        return instance.put(`/profile`, profile).then(res => res.data)
+    },
 }
 
 export type LoginParamsType = {

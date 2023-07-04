@@ -16,6 +16,7 @@ export const loginValidator = (values: FormikErrorType) => {
     return errors
 }
 
+
 export const maxLengthPostValidator = (maxLength: number, values: PostErrorType) => {
     const errors: PostErrorType = {}
     if (!values.post) errors.post = 'Required'

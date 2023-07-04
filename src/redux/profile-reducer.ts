@@ -1,6 +1,7 @@
 import {ActionType, PhotosType} from "./users-reducer";
 import {Dispatch} from "redux";
 import {profileAPI} from "../api/api";
+import {AppRootStateType} from "./store";
 
 export type PostType = {
     id: number
@@ -24,6 +25,7 @@ export type ProfileInfoType = {
     fullName: string
     contacts: ContactsType
     photos: PhotosType
+    aboutMe: string
 }
 
 export type ProfilePageType = {
@@ -63,6 +65,7 @@ export const profileReducer = (state: ProfilePageType = initialState, action: Ac
             return {...state, posts: state.posts.filter((post) => post.id !== action.postId)}
         case 'SAVE-PHOTO-SUCCESS':
             return {...state, profileInfo: {...state.profileInfo, photos: action.photos}}
+
         default:
             return state
     }
@@ -73,6 +76,7 @@ export const setUserProfile = (profileInfo: ProfileInfoType) => ({type: 'SET-USE
 export const setStatus = (status: string) => ({type: 'SET-STATUS', status}) as const
 export const deletePost = (postId: number) => ({type: 'DELETE-POST', postId}) as const
 export const savePhotoSuccess = (photos: PhotosType) => ({type: 'SAVE-PHOTO-SUCCESS', photos}) as const
+
 
 export const getUserProfile = (userId: number) => async (dispatch: Dispatch) => {
     const res = await profileAPI.getProfile(userId)
@@ -92,5 +96,14 @@ export const savePhoto = (file: string) => async (dispatch: Dispatch) => {
     const res = await profileAPI.savePhoto(file)
     if (res.data.resultCode === 0) {
         dispatch(savePhotoSuccess(res.data.data.photos))
+    }
+}
+export const saveProfile = (profile: any) => async (dispatch: any, getState: any) => {
+    const userId = getState().app.id
+    const res = await profileAPI.saveProfile(profile)
+    if (res.data.resultCode === 0) {
+        dispatch(getUserProfile(userId))
+    } else {
+        alert(res.messages)
     }
 }
