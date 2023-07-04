@@ -41,7 +41,7 @@ let initialState: ProfilePageType = {
     status: ''
 }
 
-export const profileReducer = (state: ProfilePageType = initialState, action: ActionType): ProfilePageType => {
+export const profileReducer = (state: ProfilePageType = initialState, action: ActionType): any => {
 
     switch (action.type) {
         case 'ADD-POST':
@@ -61,6 +61,8 @@ export const profileReducer = (state: ProfilePageType = initialState, action: Ac
             }
         case 'DELETE-POST':
             return {...state, posts: state.posts.filter((post) => post.id !== action.postId)}
+        case 'SAVE-PHOTO-SUCCESS':
+            return {...state, profileInfo: {...state.profileInfo, photos: action.photos}}
         default:
             return state
     }
@@ -70,6 +72,7 @@ export const addPost = (newPost: string) => ({type: 'ADD-POST', newPost}) as con
 export const setUserProfile = (profileInfo: ProfileInfoType) => ({type: 'SET-USER-PROFILE', profileInfo}) as const
 export const setStatus = (status: string) => ({type: 'SET-STATUS', status}) as const
 export const deletePost = (postId: number) => ({type: 'DELETE-POST', postId}) as const
+export const savePhotoSuccess = (photos: PhotosType) => ({type: 'SAVE-PHOTO-SUCCESS', photos}) as const
 
 export const getUserProfile = (userId: number) => async (dispatch: Dispatch) => {
     const res = await profileAPI.getProfile(userId)
@@ -83,5 +86,11 @@ export const updateStatus = (status: string) => async (dispatch: Dispatch) => {
     const res = await profileAPI.updateStatus(status)
     if (res.data.resultCode === 0) {
         dispatch(setStatus(res.data))
+    }
+}
+export const savePhoto = (file: string) => async (dispatch: Dispatch) => {
+    const res = await profileAPI.savePhoto(file)
+    if (res.data.resultCode === 0) {
+        dispatch(savePhotoSuccess(res.data.data.photos))
     }
 }

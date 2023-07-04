@@ -2,7 +2,7 @@ import React from "react";
 import {Profile} from "./Profile";
 import {connect} from "react-redux";
 import {AppRootStateType} from "../../redux/store";
-import {getStatus, getUserProfile, updateStatus} from "../../redux/profile-reducer";
+import {getStatus, getUserProfile, savePhoto, updateStatus} from "../../redux/profile-reducer";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
@@ -10,7 +10,7 @@ import {compose} from "redux";
 
 class ProfileContainer extends React.Component<any, any> {
 
-    componentDidMount() {
+    refreshProfile() {
         let userId = this.props.router.params.userId
         if (!userId) {
             userId = this.props.authorizedUserId
@@ -20,13 +20,27 @@ class ProfileContainer extends React.Component<any, any> {
         }
         this.props.getUserProfile(userId)
         this.props.getStatus(userId)
+    }
 
+    componentDidMount() {
+        this.refreshProfile()
+    }
+
+    componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {
+        if (this.props.router.params.userId != this.props.router.params.userId) {
+            this.refreshProfile()
+        }
     }
 
     render() {
         return (
-            <Profile {...this.props} profileInfo={this.props.profile} status={this.props.status}
-                     updateStatus={this.props.updateStatus}/>
+            <Profile {...this.props}
+                     profileInfo={this.props.profile}
+                     status={this.props.status}
+                     updateStatus={this.props.updateStatus}
+                     isOwner={!this.props.router.params.userId}
+                     savePhoto={this.props.savePhoto}
+            />
         )
     }
 }
@@ -54,7 +68,7 @@ let mapStateToProps = (state: AppRootStateType) => ({
     isAuth: state.app.isAuth
 })
 export default compose<React.ComponentType>(
-    connect(mapStateToProps, {getUserProfile, getStatus, updateStatus}),
+    connect(mapStateToProps, {getUserProfile, getStatus, updateStatus, savePhoto}),
     withRouter,
     WithAuthRedirect
 )(ProfileContainer)
