@@ -23,7 +23,6 @@ export const usersAPI = {
         return profileAPI.getProfile(userId)
     },
 }
-
 export const authAPI = {
     me() {
         return instance.get(`/auth/me`).then(res => res.data)
@@ -35,7 +34,6 @@ export const authAPI = {
         return instance.delete('/auth/login')
     },
 }
-
 export const profileAPI = {
     getProfile(userId: number) {
         return instance.get(`/profile/${userId}`).then(res => res.data)
